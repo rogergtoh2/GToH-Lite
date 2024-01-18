@@ -6,7 +6,7 @@ skipIntro && (mainInc = 3, mainBeat = 100), document.body.style.width = "100%", 
   t.onload = (() => { 
     let e = t.width / myCanvas.width; 
     t.height / e > myCanvas.height - 45 && (e = t.height / (myCanvas.height - 45)), ctx.imageSmoothingEnabled = !1, ctx.lineWidth = 5, ctx.strokeRect((myCanvas.width - t.width / e) / 2, 0, t.width / e, t.height / e), ctx.drawImage(t, (myCanvas.width - t.width / e) / 2, 0, t.width / e, t.height / e), ctx.lineWidth = 1 
-  }), t.src = cliDir + "textures/updates/0.3.1.png" 
+  }), t.src = cliDir + "textures/updates/0.4.0.png" 
 } 
 function cool() { 
   setTimeout(() => { 
