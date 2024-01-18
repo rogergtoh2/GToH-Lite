@@ -14,8 +14,10 @@ function SetupGame() {
   }
   var introChatQueue = [];
   introChatQueue.push('This is a singleplayer version of the game, some features will be broken.');
-  introChatQueue.push('Save data does not carry to/from the original GToH.')
-  introChatQueue.push('However progress saves even if you are not logged in.')
+  if (Username == "") {
+    introChatQueue.push('Save data does not carry to/from the original GToH.')
+    introChatQueue.push('However progress saves even if you are not logged in.')
+  }
   function finishIntroChat() {
     AddChat(introChatQueue.splice(0, 1)[0]);
     setTimeout(() => {
