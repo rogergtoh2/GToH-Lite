@@ -156,7 +156,7 @@ class Character {
       }
     }
     
-    const gravitySign = this.gravityReversed ? -1 : 1
+    const gravitySign = this.gravityDisabled ? 1 : (this.gravityReversed ? -1 : 1)
 
     //fly yAccel slowdown
     if (!this.pressUp && !this.pressDown && this.gravityDisabled)
