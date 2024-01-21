@@ -33,5 +33,5 @@ function introPhysics() {
   ctx.clearRect(0, 0, myCanvas.width, myCanvas.height), ctx.translate(IntroLogo[0] + 32, IntroLogo[1] + 32), ctx.rotate(IntroLogo[2] * Math.PI / 180), ctx.drawImage(gtohICON, gtohSize / -2, gtohSize / -2, gtohSize, gtohSize), ctx.resetTransform(), IntroLogo[1] += gtohGravity, IntroLogo[2] += gtohRotation, IntroLogo[1] > myCanvas.height / 3 && gtohGravity > 0 ? gtohGravity -= .5 : gtohGravity += .5, (gtohRotation -= .5) < 10 && (gtohAccel *= 1.3), gtohSize += gtohAccel - 1
 } 
 ctx.imageSmoothingEnabled = !1, songList.main.onplay = (() => {
-  ctx.clearRect(0, 0, myCanvas.width, myCanvas.height), skipIntro || (ctx.fillText("Made by Guppy", myCanvas.width / 2, 100), songList.main.currentTime = 0), setTimeout(cool, 500), updateVideoThing.hidden = true
+  ctx.clearRect(0, 0, myCanvas.width, myCanvas.height), skipIntro || (ctx.fillText("Made by Guppy", myCanvas.width / 2, 100), songList.main.currentTime = 0), setTimeout(cool, 500)
 });

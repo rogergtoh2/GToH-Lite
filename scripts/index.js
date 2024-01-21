@@ -66,7 +66,7 @@ function GameTick() {
     LevelWon = false;
     if (PlayTest) {
       togglePlayTest();
-    } else {
+    } else if (WorldId !== -2) {
       const i = Timer / 40;
       //if (levelsComplete[WorldId] > i || levelsComplete[WorldId] === undefined || levelsComplete[WorldId] === null) {
         if (!cheatsEnabled) {
