@@ -83,7 +83,8 @@ var blockTypeButtons = [
   ['doors/door0', 'door', {tags: [0]}],
   ['skullblock', 'die'],
   ['yellowblock', 'win'],
-  ['portalgreen', 'tp', {tags: [0, 0]}]
+  ['portalgreen', 'tp', {tags: [0, 0]}],
+  ['rgravblock', 'greverse']
 ];
 var sideBarOptions = {
   key: [
@@ -121,6 +122,10 @@ var sideBarOptions = {
   ],
   tp: [
     ['levelCreator/coorimg', null, {type: 'coor'}]
+  ],
+  greverse: [
+    ['rgravblock', 'greverse'],
+    ['ngravblock', 'gnormal']
   ]
 };
 var lastX = 0;

@@ -37,6 +37,7 @@ class Character {
     this.noClip = false;
     this.width = 30;
     this.height = 30;
+    this.gravityReversed = false;
   }
 
 
@@ -112,6 +113,12 @@ class Character {
               if (!statuses.includes('lbounce'))
                 statuses.push('lbounce');
               break;
+            case 'greverse':
+              plyr.gravityReversed = true;
+              break;
+            case 'gnormal':
+              plyr.gravityReversed = false;
+              break;
             case 'ice':
               if (!statuses.includes('icy'))
                 statuses.push('icy');
@@ -149,6 +156,7 @@ class Character {
       }
     }
     
+    const gravitySign = this.gravityReversed ? -1 : 1
 
     //fly yAccel slowdown
     if (!this.pressUp && !this.pressDown && this.gravityDisabled)
@@ -156,10 +164,10 @@ class Character {
 
     //gravity go down
     if (!this.gravityDisabled || this.pressDown)
-      this.yAccel += 1;
+      this.yAccel += gravitySign
 
     //limit gravity
-    if (this.yAccel > 18) this.yAccel -= 1;
+    if ((this.yAccel > 18 && !this.gravityReversed) || (this.yAccel < -18 && this.gravityReversed)) this.yAccel -= gravitySign;
     if (Math.abs(this.yAccel) > this.speed && this.gravityDisabled) this.yAccel = this.speed * Math.sign(this.yAccel);
 
     //for bounce blocks
@@ -198,17 +206,17 @@ class Character {
 
 
     if (touch(this) && !this.noClip) {
-      if (this.yAccel > 0 || statuses.includes('mud')) {
+      if ((this.yAccel > 0 && !this.gravityReversed) || (this.yAccel < 0 && this.gravityReversed) || statuses.includes('mud')) {
         if (!statuses.includes('rjump'))
           this.canJump = true;
         prevTouchIcy = false;
         for (let o = 0; o < 19; o++) {
           if (!touch(this)) break;
-          this.y -= 1;
+          this.y -= gravitySign;
           if (o === 18) {
-            this.y += 19;
+            this.y += 19 * gravitySign;
             while (touch(this))
-              this.y += 1;
+              this.y += gravitySign;
           }
         }
         if (this.yAccel > 16) {
@@ -232,7 +240,7 @@ class Character {
           if (i === 2) this.x -= 3;
         }
 
-        while (touch(this)) this.y += 1;
+        while (touch(this)) this.y += gravitySign;
       }
       this.yAccel = 0;
     } //(touch(this, i))
@@ -241,7 +249,7 @@ class Character {
 
 
     //no jump if fall
-    if (this.yAccel > 3)
+    if (this.yAccel * gravitySign > 3)
       this.canJump = false;
 
     //when key down move left/right + walljump
@@ -262,9 +270,9 @@ class Character {
       for (let i = 0; i < 14; i++) {
         if (!touch(this))
           break;
-        this.y -= 1;
+        this.y -= gravitySign;
         if (i === 13) {
-          this.y += 14;
+          this.y += 14 * gravitySign;
           while (touch(this)) {
             this.x -= Math.sign(this.xAccel);
           }
@@ -272,7 +280,7 @@ class Character {
             if (this.wallJump < 3 && !nJump) {
               this.xAccel *= -1.2;
               this.xAccel = Math.round(this.xAccel);
-              this.yAccel = this.jump / -1.5;
+              this.yAccel = this.jump / -1.5 * gravitySign;
               this.wallJump = 7;
             }
           } else
@@ -295,7 +303,7 @@ class Character {
     if (!this.gravityDisabled) {
 
       if (this.pressUp && (this.canJump || statuses.includes('mud')) && !prevMudJump) {
-        this.yAccel = -this.jump;
+        this.yAccel = -this.jump * gravitySign;
         this.canJump = false;
         if (statuses.includes('mud'))
           prevMudJump = true;
@@ -303,7 +311,7 @@ class Character {
       if (!this.pressUp) prevMudJump = false;
 
     } else if (this.pressUp)
-      this.yAccel -= 1;
+      this.yAccel -= gravitySign;
     if (this.y > 1000) {
       if (IsBuilding) {
         CreateWorld({

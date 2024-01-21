@@ -78,6 +78,12 @@ class Block {
       case 'rjump':
         this.img = cliDir + 'textures/nojumpblock.png';
         break;
+      case 'greverse':
+        this.img = cliDir + 'textures/rgravblock.png';
+        break;
+      case 'gnormal':
+        this.img = cliDir + 'textures/ngravblock.png';
+        break;
       case 'portal':
         if (this.tags[0] > 0 && levelsComplete[this.tags[0]] > 0) {
           this.img = cliDir + 'textures/portalgreen.png';
