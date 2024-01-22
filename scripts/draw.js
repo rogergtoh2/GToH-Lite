@@ -8,7 +8,7 @@ function addImage(img) {
 }
 
 addImage(playerImg);
-addImage(cliDir + 'textures/dialogue.png');
+addImage(cliDir + 'textures/dialogue/dialogue.png');
 
 function AddDrawQueue(type, obj) {
   switch(type) {
