@@ -1,4 +1,8 @@
 # Changelog
+### Version 0.4.1 `FIXES`
+- Bugfixes
+  - Tower of Backtracking used "spawn:" instead of "spawn"
+  - dialogue.png was called instead of dialogue/dialogue.png
 ### Version 0.4.0 `BIG UPDATE`
 - Game now singeplayer
 - Added gravity blocks
