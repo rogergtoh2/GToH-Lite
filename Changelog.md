@@ -1,8 +1,8 @@
 # Changelog
 ### Version 0.4.1 `FIXES`
 - Bugfixes
-  - Tower of Backtracking used "spawn:" instead of "spawn"
-  - dialogue.png was called instead of dialogue/dialogue.png
+  - Tower of Backtracking used "spawn:" instead of "spawn", causing the script to error and not reset timer
+  - dialogue.png was called instead of dialogue/dialogue.png, which did nothing I think just an annoying console error
 ### Version 0.4.0 `BIG UPDATE`
 - Game now singeplayer
 - Added gravity blocks
