@@ -84,7 +84,7 @@ var blockTypeButtons = [
   ['skullblock', 'die'],
   ['yellowblock', 'win'],
   ['portalgreen', 'tp', {tags: [0, 0]}],
-  ['rgravblock', 'greverse']
+  ['rgravblock', 'greverse'],
   ['vines', 'vines']
 ];
 var sideBarOptions = {
