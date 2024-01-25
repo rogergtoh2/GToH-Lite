@@ -88,7 +88,7 @@ var blockTypeButtons = [
   ['vines', 'vines'],
 ];
 var sideBarOptions = {
-  block: [
+  vines: [
     ['dirt', 'grass']
    ],
   key: [
