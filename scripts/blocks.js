@@ -62,7 +62,7 @@ class Block {
         if (this.img === '')
         this.img = cliDir + 'textures/block.png';
         break;
-      case 'vine':
+      case 'vines':
         this.img = cliDir + 'textures/vines.png';
         this.tags.push('nc');
         break;
