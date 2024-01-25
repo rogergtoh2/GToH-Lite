@@ -13,10 +13,10 @@ function SetupGame() {
     AddChat(txt2);
   }
   var introChatQueue = [];
-  introChatQueue.push('This is a singleplayer version of the game, some features will be broken.');
+  introChatQueue.push('Welcome to GToH Expanded!');
   if (Username == "") {
-    introChatQueue.push('Save data does not carry to/from the original GToH.')
-    introChatQueue.push('However progress saves even if you are not logged in.')
+    introChatQueue.push('Rogersd did this so you could have a higher quality GToH experience!')
+    introChatQueue.push('Let us know if you enjoy! Have fun!')
   }
   function finishIntroChat() {
     AddChat(introChatQueue.splice(0, 1)[0]);
