@@ -143,7 +143,7 @@ class Character {
               return;
             case 'vines':
               break;
-            case 'grass'
+            case 'dirt'
               return true;
             case 'decor':
               if(i.tags[1] === false && i.tags.includes('moderatorTest')) {
