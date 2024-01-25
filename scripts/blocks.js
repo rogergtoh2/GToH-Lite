@@ -58,6 +58,7 @@ class Block {
       case 'grass':
       case 'dirt':
       this.img = cliDir + 'textures/grassblock.png';
+        break;
       case 'block':
         if (this.img === '')
         this.img = cliDir + 'textures/block.png';
