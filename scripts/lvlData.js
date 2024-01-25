@@ -3,7 +3,7 @@ lvlData[-7] = {
   "format": 2,
   "spawn": [150, 210]
   "about": { name: '', diff: "World A", create: ''},
-  "music": 'traveler',
+  "music": "traveler",
   "levels": [60],
   "data": [
   [250,-150,'portal',1,1,[60]],
