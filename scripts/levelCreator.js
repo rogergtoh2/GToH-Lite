@@ -89,7 +89,7 @@ var blockTypeButtons = [
 ];
 var sideBarOptions = {
   block: [
-    ['dirt', 'grass']}]
+    ['dirt', 'grass']
    ],
   key: [
     ['keys/key0', 'key', {tags: [0]}],
