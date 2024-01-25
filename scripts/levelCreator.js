@@ -126,7 +126,8 @@ var sideBarOptions = {
   ],
   greverse: [
     ['rgravblock', 'greverse'],
-    ['ngravblock', 'gnormal']
+    ['ngravblock', 'gnormal'],
+    ['dirt', 'grass']
   ]
 };
 var lastX = 0;
