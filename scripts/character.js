@@ -141,6 +141,8 @@ class Character {
               plyr.x = i.tags[0];
               plyr.y = i.tags[1];
               return;
+            case 'vines':
+              break;
             case 'decor':
               if(i.tags[1] === false && i.tags.includes('moderatorTest')) {
                 i.tags[1] = true;
@@ -150,9 +152,7 @@ class Character {
             case 'njump':
               nJump = true;
             default:
-              return true;
-            case 'vines':
-              break;              
+              return true;           
           }
         }
       }
