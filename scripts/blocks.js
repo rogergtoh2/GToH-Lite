@@ -56,6 +56,8 @@ class Block {
         break;
       case 'fullgrass':
       case 'grass':
+        this.img = cliDir + 'textures/grassblock.png';
+        break;
       case 'dirt':
       this.img = cliDir + 'textures/grassblock.png';
       case 'block':
