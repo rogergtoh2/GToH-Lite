@@ -15,7 +15,7 @@ function SetupGame() {
   var introChatQueue = [];
   introChatQueue.push('Welcome to GToH Expanded!');
   if (Username == "") {
-    introChatQueue.push('Rogersd did this so you could have a higher quality GToH experience!')
+    introChatQueue.push('rogersd did this so you could experience GToH to its fullest!')
     introChatQueue.push('Let us know if you enjoy! Have fun!')
   }
   function finishIntroChat() {
