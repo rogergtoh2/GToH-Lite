@@ -151,6 +151,8 @@ class Character {
               nJump = true;
             default:
               return true;
+            case 'vines':
+              break;              
           }
         }
       }
