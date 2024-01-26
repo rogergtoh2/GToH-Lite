@@ -129,6 +129,7 @@ var sideBarOptions = {
     ['ngravblock', 'gnormal']
   ],
   block: [
+    ['block', 'block'],
     ['grassblock', 'fullgrass']
   ]
 };
