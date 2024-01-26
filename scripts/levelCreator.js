@@ -85,8 +85,8 @@ var blockTypeButtons = [
   ['yellowblock', 'win'],
   ['portalgreen', 'tp', {tags: [0, 0]}],
   ['rgravblock', 'greverse'],
-  ['vines', 'vines']
-  ['dirt', 'grass']
+  ['vines', 'vines'],
+  ['grassblock', 'fullgrass']
 ];
 var sideBarOptions = {
   key: [
