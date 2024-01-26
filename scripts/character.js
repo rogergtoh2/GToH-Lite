@@ -141,7 +141,7 @@ class Character {
               plyr.x = i.tags[0];
               plyr.y = i.tags[1];
               return;
-            case 'vines':
+            case 'vine':
               break;
             case 'dirt':
               return true;
