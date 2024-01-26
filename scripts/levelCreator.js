@@ -127,6 +127,7 @@ var sideBarOptions = {
   greverse: [
     ['rgravblock', 'greverse'],
     ['ngravblock', 'gnormal']
+  ],
   block: [
     ['grassblock', 'fullgrass']
   ]
