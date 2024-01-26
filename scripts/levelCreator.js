@@ -85,8 +85,7 @@ var blockTypeButtons = [
   ['yellowblock', 'win'],
   ['portalgreen', 'tp', {tags: [0, 0]}],
   ['rgravblock', 'greverse'],
-  ['vines', 'vines'],
-  ['grassblock', 'fullgrass']
+  ['vines', 'vines']
 ];
 var sideBarOptions = {
   key: [
@@ -128,6 +127,8 @@ var sideBarOptions = {
   greverse: [
     ['rgravblock', 'greverse'],
     ['ngravblock', 'gnormal']
+  block: [
+    ['grassblock', 'fullgrass']
   ]
 };
 var lastX = 0;
