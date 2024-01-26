@@ -86,6 +86,7 @@ var blockTypeButtons = [
   ['portalgreen', 'tp', {tags: [0, 0]}],
   ['rgravblock', 'greverse'],
   ['vines', 'vines']
+  ['dirt', 'grass']
 ];
 var sideBarOptions = {
   key: [
@@ -122,8 +123,7 @@ var sideBarOptions = {
     ['bounceLeft', 'lbounce']
   ],
   tp: [
-    ['levelCreator/coorimg', null, {type: 'coor'}],
-    ['dirt', 'grass']
+    ['levelCreator/coorimg', null, {type: 'coor'}]
   ],
   greverse: [
     ['rgravblock', 'greverse'],
