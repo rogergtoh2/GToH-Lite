@@ -67,8 +67,9 @@ class Block {
         this.img = cliDir + 'textures/vines.png';
         this.tags.push('nc');
         break;
-      case 'bblank'
+      case 'blank2'
         this.img = cliDir + 'textures/bblank.png';
+        this.tags.push('nc');
         break;
       case 'red':
         this.img = cliDir + 'textures/redblock.png';
