@@ -131,6 +131,10 @@ var sideBarOptions = {
   block: [
     ['block', 'block'],
     ['grassblock', 'fullgrass']
+  ],
+  vine: [
+    ['vines', 'vine'],
+    ['bblank', 'bblank']
   ]
 };
 var lastX = 0;
