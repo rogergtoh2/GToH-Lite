@@ -70,6 +70,9 @@ class Block {
       case 'blank2':
         this.img = cliDir + 'textures/bblank.png';
         break;
+      case 'textblock':
+        this.img = cliDir + 'textures/text.png';
+        break;
       case 'red':
         this.img = cliDir + 'textures/redblock.png';
         break;
