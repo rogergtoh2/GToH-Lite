@@ -1,6 +1,9 @@
 function CreateBlocks(x, y, type = 'block', length = 1, height = 1, extraTags = [], oImg = null) {
   let blockSize = 30;
-  if (type === 'small') {
+  if (type === 'text') {
+    worldText.push(new Text(extraTags[0], x, y))
+  } else {
+   if (type === 'small') {
     blockSize = 5;
   }
   for (let w = 0; w < length; w++) {
@@ -9,7 +12,7 @@ function CreateBlocks(x, y, type = 'block', length = 1, height = 1, extraTags = 
     }
   }
 }
-
+}
 function CreateWorld(id, useID = true) {
   RecentTower = WorldId;
   if (useID)
