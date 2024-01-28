@@ -143,6 +143,8 @@ class Character {
               return;
             case 'vine':
               break;
+            case 'textblock':
+              
             case 'blank2':
               break;
             case 'dirt':
