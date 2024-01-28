@@ -121,8 +121,6 @@ function fcoll(obj, obj2) {
 var preloadList = [
   'block',
   'blueblock',
-  'dialogue/dialogueChad',
-  'dialogue/dialogue',
   'bounceDown',
   'grassblock',
   'yellowblock',
