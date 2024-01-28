@@ -125,12 +125,6 @@ function process_command(command = null) {
         alert('Incorrect amount of arguments');
       }
       break;
-    case "level":
-    case "lvl":
-      if (command.length !== 2) {
-        alert('Incorrect amount of arguments');
-        break;
-      }
 
       if (Number.isInteger(parseInt(command[1]))) {
         CreateWorld(parseInt(command[1]));
