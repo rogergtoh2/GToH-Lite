@@ -69,8 +69,6 @@ function CreateWorld(id, useID = true) {
     worldText.push(new Text('press r twice to quick restart', 670, -60, 12));
     world.push(new AnimatedBlock(95, 260, 'orbo.png', t, 2, ['nc']));
     //worldText.push(new Text('Coming March 19...', 360, -320, 12));
-    world.push(new Block('decor', 225, -320, ['nc'], 'portalred.png'));
-    worldText.push(new Text('Request Mod', 240, -330, 12));
     world.push(new AnimatedBlock(350, -320, 'portalgreyanim.png', 
     {
       init:[30, 30, 4, 2],
