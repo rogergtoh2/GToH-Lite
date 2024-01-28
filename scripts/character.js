@@ -144,7 +144,8 @@ class Character {
             case 'vine':
               break;
             case 'textblock':
-              
+              worldText.push(new Text('/ for console', 150, -250, 12));
+              break;
             case 'blank2':
               break;
             case 'dirt':
