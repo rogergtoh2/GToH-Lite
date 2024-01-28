@@ -86,7 +86,7 @@ var blockTypeButtons = [
   ['portalgreen', 'tp', {tags: [0, 0]}],
   ['rgravblock', 'greverse'],
   ['vines', 'vine'],
-  ['text', 'text']
+  ['text', 'text', {tags: ["test", 30]}]
 ];
 var sideBarOptions = {
   key: [
@@ -138,7 +138,8 @@ var sideBarOptions = {
     ['bblank', 'blank2']
   ],
   text: [
-    ['errorblock', null, {type: 'text'}]
+    ['errorblock', null, {type: 'text'}],
+    ['errorblock', null, {type: 'fontSize'}]
   ]
 };
 var lastX = 0;
@@ -240,7 +241,12 @@ myCanvas.addEventListener('mousedown', MyEvent => {
             } else if (sideBarOptions[rootBlockType][b][2] !== undefined && sideBarOptions[rootBlockType][b][2].type === 'text') {
               var p = prompt('type text');
               if (p !== null && p !== '') {
-                blockNbt = {tags: [p]};
+                blockNbt.tags[0] = p;
+              }
+            } else if (sideBarOptions[rootBlockType][b][2] !== undefined && sideBarOptions[rootBlockType][b][2].type === 'fontSize') {
+              var p = prompt('type font size (default is 30)');
+              if (p !== null && p !== '' && parseInt(p) !== NaN) {
+                blockNbt.tags[1] = parseInt(p);
               }
             } else {
               cursorImg = cliDir + 'textures/' + sideBarOptions[rootBlockType][b][0] + '.png';
