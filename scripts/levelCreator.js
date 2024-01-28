@@ -86,7 +86,7 @@ var blockTypeButtons = [
   ['portalgreen', 'tp', {tags: [0, 0]}],
   ['rgravblock', 'greverse'],
   ['vines', 'vine'],
-  ['text', 'textblock']
+  ['text', 'text']
 ];
 var sideBarOptions = {
   key: [
@@ -136,6 +136,9 @@ var sideBarOptions = {
   vine: [
     ['vines', 'vine'],
     ['bblank', 'blank2']
+  ],
+  text: [
+    ['errorblock', null, {type: 'text'}]
   ]
 };
 var lastX = 0;
@@ -233,6 +236,11 @@ myCanvas.addEventListener('mousedown', MyEvent => {
                   blockNbt.tags[i] = JSON.parse(blockNbt.tags[i]);
                 }
                      
+              }
+            } else if (sideBarOptions[rootBlockType][b][2] !== undefined && sideBarOptions[rootBlockType][b][2].type === 'text') {
+              var p = prompt('type text');
+              if (p !== null && p !== '') {
+                blockNbt = {tags: [p]};
               }
             } else {
               cursorImg = cliDir + 'textures/' + sideBarOptions[rootBlockType][b][0] + '.png';
