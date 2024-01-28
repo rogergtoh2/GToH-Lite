@@ -67,7 +67,6 @@ function CreateWorld(id, useID = true) {
     worldText.push(new Text('L to set username', 670, -100, 12));
     worldText.push(new Text('/ for console', 670, -80, 12));
     worldText.push(new Text('press r twice to quick restart', 670, -60, 12));
-    world.push(new AnimatedBlock(95, 260, 'orbo.png', t, 2, ['nc']));
     //worldText.push(new Text('Coming March 19...', 360, -320, 12));
     world.push(new AnimatedBlock(350, -320, 'portalgreyanim.png', 
     {
