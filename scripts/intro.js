@@ -15,7 +15,7 @@ function cool() {
         ctx.fillText("Music by Retrobop", myCanvas.width / 2, 300); 
         break; 
       case 2: 
-        ctx.fillText("GToH Expanded Alpha by Rogersd", myCanvas.width / 2, 500); 
+        ctx.fillText("Expanded by RogerSD", myCanvas.width / 2, 500); 
         break; 
       case 3: 
         ctx.clearRect(0, 0, myCanvas.width, myCanvas.height), tempInterval = setInterval(introPhysics, 25); 
