@@ -34,7 +34,7 @@ lvlData[-7] = {
 lvlData[-6] = {
   "format": 2,
   "spawn": [150, 210],
-  "about": { name: '', diff: "Interlude 1", create: ''},
+  "about": { name: '', diff: "Interlude", create: ''},
   "music": 'yehyeh',
   "levels": [34, 35, 36, 37,38,40,43,45,46,47,48,49,50,51,52,53,54],
   "data": [
