@@ -1,7 +1,7 @@
 function CreateBlocks(x, y, type = 'block', length = 1, height = 1, extraTags = [], oImg = null) {
   let blockSize = 30;
   if (type === 'text') {
-    worldText.push(new Text(extraTags[0], x, y, extraTags[1]))
+    worldText.push(new Text(extraTags[0], x + 15, y + extraTags[1], extraTags[1]))
   } else {
    if (type === 'small') {
     blockSize = 5;
