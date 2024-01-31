@@ -69,7 +69,7 @@ function CreateWorld(id, useID = true) {
     //worldText.push(new Text('tab to see players online', 670, -120, 12));
     worldText.push(new Text('L to set username', 670, -100, 12));
     worldText.push(new Text('/ for console', 670, -80, 12));
-    worldText.push(new Text('press r twice to quick restart', 670, -60, 12));
+    worldText.push(new Text('GToH Expanded 0.2.0', 670, -60, 12));
     //worldText.push(new Text('Coming March 19...', 360, -320, 12));
     world.push(new AnimatedBlock(350, -320, 'portalgreyanim.png', 
     {
