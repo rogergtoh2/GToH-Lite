@@ -346,7 +346,7 @@ myCanvas.addEventListener('mouseup', MyEvent => {
     }
     var extraTags = [];
     if ('tags' in blockNbt) {
-      extraTags = blockNbt.tags;
+      extraTags = [...blockNbt.tags];
     }
     if (extraTags.length === 0)
       creatorBlocks.push([inx, iny, blockType, createWidth, createHeight]);
@@ -480,6 +480,9 @@ function lvlCreateTick() {
 
   for (const blk of world) {
     AddDrawQueue('block', blk);
+  }
+  for (const blk of worldText) {
+    AddDrawQueue('text', blk);
   }
   AddDrawQueue('plyr', {x: spawnPos[0], y: spawnPos[1], img: playerImg})
   DrawFrame(false);
