@@ -153,8 +153,8 @@ lvlData[-2] = {
   "data": [
     [-120,-40,"portal",1,1,[-1]],
     [110,-120,"portal",1,1,[0]],
-    [225,-120,"portal",1,1,[-3]],
-    [350,-120,"portal",1,1,[-4]],
+    [250,-120,"portal",1,1,[-3]],
+    [380,-120,"portal",1,1,[-4]],
     [210,-320,"portal",1,1,[-5]],
     [500,-320,"portal",1,1,[-6]],
     [350,-320,"portal",1,1,[69]],
@@ -167,7 +167,7 @@ lvlData[-2] = {
 lvlData[-1] = {
   "format": 2,
   "spawn": [150, 60],
-  "about": { name: 'Level Creator', diff: 'BETA', create: ''},
+  "about": { name: 'Level Creator', diff: 'Expanded', create: ''},
   "music": "levelcreator"
 }
 lvlData[0] = {
