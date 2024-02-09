@@ -152,7 +152,7 @@ lvlData[-2] = {
   "about": { name: '', diff: 'Lobby', create: '' },
   "music": 'main',
   "data": [
-    [520,-120,"portal",1,1,[-1]],
+    [-120,-40,"portal",1,1,[-1]],
     [110,-120,"portal",1,1,[0]],
     [250,-120,"portal",1,1,[-3]],
     [380,-120,"portal",1,1,[-4]],
