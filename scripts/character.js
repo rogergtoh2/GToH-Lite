@@ -125,6 +125,9 @@ class Character {
               prevTouchIcy = true;
               return true;
             case 'water':
+               if (!statuses.includes('icy'))
+                statuses.push('icy');
+              prevTouchIcy = true;
               break;
             case 'mud':
               if (!statuses.includes('mud')) {
