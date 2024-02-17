@@ -125,9 +125,8 @@ class Character {
               prevTouchIcy = true;
               return true;
             case 'water':
-               if (!statuses.includes('icy'))
-                statuses.push('icy');
-              prevTouchIcy = true;
+               if (!statuses.includes('water'))
+                statuses.push('water');
               break;
             case 'mud':
               if (!statuses.includes('mud')) {
@@ -170,7 +169,9 @@ class Character {
       }
     }
     
-    const gravitySign = this.gravityDisabled ? 1 : (this.gravityReversed ? -1 : 1)
+    touch(this);
+    const gravitySign = (this.gravityDisabled ? 1 : (this.gravityReversed ? -1 : 1)) * (statuses.includes('water') ? -1 : 1)
+    const maxGravity = statuses.includes('water') ? 3 : 18;
 
     //fly yAccel slowdown
     if (!this.pressUp && !this.pressDown && this.gravityDisabled)
@@ -179,10 +180,17 @@ class Character {
     //gravity go down
     if (!this.gravityDisabled || this.pressDown)
       this.yAccel += gravitySign
+    if (statuses.includes('water') && this.pressDown)
+      this.yAccel -= gravitySign * 2
 
     //limit gravity
-    if ((this.yAccel > 18 && !this.gravityReversed) || (this.yAccel < -18 && this.gravityReversed)) this.yAccel -= gravitySign;
-    if (Math.abs(this.yAccel) > this.speed && this.gravityDisabled) this.yAccel = this.speed * Math.sign(this.yAccel);
+    if (((this.yAccel > maxGravity) && gravitySign === 1) || ((this.yAccel < -maxGravity) && gravitySign === -1)) {
+      this.yAccel -= gravitySign;
+      console.log(this.yAccel)
+    }
+    if (Math.abs(this.yAccel) > this.speed && (this.gravityDisabled || statuses.includes('water'))) this.yAccel = this.speed * Math.sign(this.yAccel);
+
+
 
     //for bounce blocks
     touch(this);
@@ -220,7 +228,7 @@ class Character {
 
 
     if (touch(this) && !this.noClip) {
-      if ((this.yAccel > 0 && !this.gravityReversed) || (this.yAccel < 0 && this.gravityReversed) || statuses.includes('mud')) {
+      if ((this.yAccel > 0 && gravitySign === 1) || (this.yAccel < 0 && gravitySign === -1) || statuses.includes('mud')) {
         if (!statuses.includes('rjump'))
           this.canJump = true;
         prevTouchIcy = false;
@@ -316,8 +324,8 @@ class Character {
     //jump
     if (!this.gravityDisabled) {
 
-      if (this.pressUp && (this.canJump || statuses.includes('mud')) && !prevMudJump) {
-        this.yAccel = -this.jump * gravitySign;
+      if (this.pressUp && (this.canJump || statuses.includes('mud') || statuses.includes('water')) && !prevMudJump) {
+        this.yAccel = -this.jump * gravitySign * (statuses.includes('water') ? -1 : 1);
         this.canJump = false;
         if (statuses.includes('mud'))
           prevMudJump = true;
