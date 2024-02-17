@@ -58,9 +58,6 @@ helpButton.height = 75;
 var settingButton = new Block('decor', myCanvas.width - 205, myCanvas.height - 150, [], 'levelCreator/settings.png');
 settingButton.width = 75;
 settingButton.height = 75;
-var betaButton = new Block('decor', myCanvas.width - 140, myCanvas.height - 75, [], 'levelCreator/betaicon.png');
-betaButton.width = 75;
-betaButton.height = 75;
 addImage(saveButton.img);
 addImage(undoButton.img);
 addImage(playTestButton.img);
@@ -70,7 +67,6 @@ addImage(loadButton.img);
 addImage(gridButton.img);
 addImage(helpButton.img);
 addImage(settingButton.img);
-addImage(betaButton.img);
 var blockTypeButtons = [
   ['block','block'],
   ['smallcursor', 'small'],
@@ -119,9 +115,6 @@ var sideBarOptions = {
   ],
   settings: [
     ['errorblock', null, {type: 'coor'}]
-  ],
-  betaicon: [
-    ['water', 'water']
   ],
   bounce: [
     ['bounceUp', 'bounce'],
