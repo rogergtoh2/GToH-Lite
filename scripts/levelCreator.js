@@ -120,7 +120,7 @@ var sideBarOptions = {
   settings: [
     ['errorblock', null, {type: 'coor'}]
   ],
-  betaButton: [
+  betaicon: [
     ['water', 'water']
   ],
   bounce: [
