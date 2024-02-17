@@ -180,13 +180,15 @@ class Character {
     //gravity go down
     if (!this.gravityDisabled || this.pressDown)
       this.yAccel += gravitySign
+    if (statuses.includes('water') && this.pressDown)
+      this.yAccel -= gravitySign * 2
 
     //limit gravity
     if (((this.yAccel > maxGravity) && gravitySign === 1) || ((this.yAccel < -maxGravity) && gravitySign === -1)) {
       this.yAccel -= gravitySign;
       console.log(this.yAccel)
     }
-    if (Math.abs(this.yAccel) > this.speed && this.gravityDisabled) this.yAccel = this.speed * Math.sign(this.yAccel);
+    if (Math.abs(this.yAccel) > this.speed && (this.gravityDisabled || statuses.includes('water'))) this.yAccel = this.speed * Math.sign(this.yAccel);
 
 
 
