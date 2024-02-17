@@ -58,7 +58,7 @@ helpButton.height = 75;
 var settingButton = new Block('decor', myCanvas.width - 205, myCanvas.height - 150, [], 'levelCreator/settings.png');
 settingButton.width = 75;
 settingButton.height = 75;
-var betaButton = new Block('decor'myCanvas.width - 140, myCanvas.height - 150, [], 'levelCreator/betaicon.png');
+var betaButton = new Block('decor', myCanvas.width - 140, myCanvas.height - 150, [], 'levelCreator/betaicon.png');
 betaButton.width = 75;
 betaButton.height = 75;
 addImage(saveButton.img);
