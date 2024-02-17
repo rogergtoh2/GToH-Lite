@@ -96,3 +96,4 @@ function ShopLeave() {
 function AddChat(msg) {
   chatQueue.push([msg, 0]);
 }
+
