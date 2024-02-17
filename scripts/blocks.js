@@ -171,6 +171,9 @@ class Block {
       case 'ice':
         this.img = cliDir + `textures/iceblock.png`;
         break;
+      case 'water':
+        this.img = cliDir + 'textures/water.png';
+        break;
       case 'die':
         this.img = cliDir + `textures/skullblock.png`;
         break;
