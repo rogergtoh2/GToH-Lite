@@ -6,6 +6,7 @@ lvlData[-11] = {
   "levels": [95],
   "data": [
     [300,120,"portal",1,1,[95]],
+    [450,120,"portal",1,1,[96]],
     [60,135,"portal",1,1,[-2]],
     [90,240,"block",5,1],[0,240,"block",3,1],[240,240,"block",7,1],[450,240,"block",6,1],[690,150,"blue",1,3],[600,270,"block",1,2],[630,300,"block",6,1],[780,-90,"block",1,13],[690,-30,"red",1,5],[690,-180,"block",2,1],[390,-180,"block",10,1],[150,-180,"block",8,1],[-60,-180,"block",7,1],[-240,-180,"block",6,1],[-240,-240,"bounce",1,1],[-180,-540,"lbounce",3,1],[-480,-360,"greverse",1,1],[-240,-210,"bounce",1,1],[-990,-750,"njump",20,1],[-510,-720,"njump",1,1],[-420,-720,"njump",1,1],[-480,-720,"njump",2,1],[-450,-690,"njump",2,1],[-420,-660,"njump",1,1],[-1260,-750,"njump",10,1],[-1290,-750,"njump",1,8],[-420,-630,"njump",1,6],[-390,-750,"njump",26,1],[-720,-60,"block",17,1],[-240,-150,"block",1,3],[-720,-300,"njump",1,8],[-420,-450,"lbounce",1,1]
     ]
@@ -925,13 +926,18 @@ lvlData[94] = {
 };
 lvlData[95] = {
   "format": 2,
-  "about": { name: "Tutorial of Red and Blue", diff: "Tutorial", create: "rogersd"},
+  "about": { name: "Tutorial of Red and Blue Blocks", diff: "Tutorial", create: "rogersd"},
   "spawn": [150,60],
   "reward": { Easy: 1},
   "data": [[60,120,"block",7,1],[210,150,"vine",1,2],[90,150,"vine",1,4],[270,120,"block",2,1],[330,120,"block",3,1],[60,60,"text",1,1,["Welcome to the red and blue block tutorial!",15]],[420,-150,"blue",1,9],[450,-120,"blue",1,8],[450,-150,"blue",1,1],[420,180,"text",1,1,["Press spacebar to deactivate the blue blocks!",10]],[420,120,"block",4,1],[420,-300,"text",1,1,["dude if youre wallhopping over this, you dont need this. just leave",7]],[75,132,"text",1,1,["by rogersd",7]],[540,120,"block",9,1],[780,180,"text",1,1,["Press spacebar to deactivate the red blocks!",10]],[780,-150,"red",2,9],[810,120,"block",1,1],[840,120,"block",9,1],[1050,-30,"text",1,1,["Practice!",8]],[1110,120,"block",6,1],[1200,-90,"red",2,7],[1290,120,"block",4,1],[1350,-120,"blue",1,8],[1410,120,"block",2,1],[1410,90,"red",2,1],[1440,-120,"red",1,7],[1440,180,"text",1,1,["Deactivate, then jump to reach the next platform!",8]],[1590,120,"blue",5,1],[1830,180,"text",1,1,["Jump! Activate and deactivate mid-air!",8]],[1860,120,"red",5,1],[2130,120,"blue",5,1],[2370,120,"red",5,1],[2490,180,"text",1,1,["Keep going! Let's put all your skills together!",8]],[2610,120,"blue",5,1],[2730,-120,"blue",1,8],[2820,120,"red",8,1],[2910,-120,"red",2,8],[2760,180,"text",1,1,["Deactivate then reactivate!",12]],[3120,120,"blue",5,1],[3120,-90,"blue",1,7],[3120,180,"text",1,1,["Wait a bit before activating! Make sure you aren't inside the block!",8]],[3330,-90,"red",2,8],[3390,90,"red",5,2],[3540,60,"blue",2,1],[3570,30,"blue",2,1],[3600,0,"blue",2,1],[3540,90,"blue",2,2],[3600,60,"blue",1,3],[3630,30,"blue",1,3],[3660,0,"blue",1,3],[3660,-30,"blue",1,1],[3630,-30,"blue",1,1],[3660,-60,"blue",1,1],[3510,-150,"red",3,1],[3390,-270,"text",1,1,["Jump on top! Over here!",8]],[3240,-180,"blue",1,1],[3150,-270,"blue",1,1],[2820,-330,"block",9,1],[2820,-300,"vine",1,3],[3060,-300,"vine",1,2],[2640,-330,"block",6,1],[2850,-480,"text",1,1,["Great job! Those were the basics! Check out our advanced tutorial on Floor 2 to see more tricks using red and blue blocks! Thanks for playing!",5]],[2490,-330,"blue",3,1],[2310,-330,"red",6,1],[2100,-510,"win",6,7]]
 };
-
-
+lvlData[96] = {
+  "format": 2,
+  "about": { name: "Tutorial of Timed Blocks", diff: "Tutorial", create: "rogersd"},
+  "spawn": [150,60],
+  "reward": { Easy: 1},
+  "data": [[0,90,"block",15,1],[30,0,"text",1,1,["Welcome to the Tutorial of Timed Blocks!",15]],[360,-210,"orange",3,10],[450,90,"block",5,1],[420,150,"text",1,1,["Wait for the orange block to blink transparent, then run through it!",8]],[600,90,"block",8,1],[690,-210,"purple",3,10],[840,150,"text",1,1,["Do the same thing for the purple block! Theyre activated whenever the orange block isn't!",7]],[840,90,"block",4,1],[930,0,"block",1,3],[960,0,"block",7,1],[1110,30,"vine",1,3],[990,30,"vine",1,2],[900,-90,"text",1,1,["Keep practicing!",7]],[1050,-210,"purple",2,7],[1170,0,"block",9,1],[1230,-210,"orange",2,7],[1380,-210,"purple",2,7],[1470,60,"text",1,1,["Jump!",8]],[1530,0,"block",6,1],[1680,30,"block",1,3],[1710,90,"block",6,1],[1800,0,"orange",4,1],[1890,90,"block",7,1],[1860,60,"text",1,1,["Jump! Be ready to jump again! Don't worry, there's a failsafe!",8]],[2070,0,"purple",4,1],[2040,0,"purple",1,1],[1920,0,"orange",1,1],[2310,60,"block",5,1],[2460,60,"block",5,1],[2430,120,"text",1,1,["Great job! Let's put it all together!",8]],[2520,-180,"purple",3,8],[2730,60,"purple",3,1],[2790,-180,"purple",1,8],[2880,60,"orange",4,1],[3090,120,"block",5,1],[3180,90,"block",2,1],[3210,60,"block",1,1],[3240,60,"orange",2,1],[3270,-150,"orange",1,7],[3360,60,"purple",2,1],[3390,-180,"purple",1,8],[3480,0,"orange",3,1],[3540,-180,"orange",1,6],[3540,-300,"orange",1,4],[3270,-300,"orange",1,5],[3390,-300,"purple",1,4],[3600,240,"block",5,1],[3660,300,"text",1,1,["Wow! Good job! Now let's do some quick jumps! Be speedy!",8]],[3810,180,"orange",1,1],[3900,120,"orange",1,1],[3780,420,"block",16,1],[3990,480,"text",1,1,["This is a failsafe. You can always try again, just go left!",8]],[3570,420,"block",7,1],[3480,330,"orange",2,1],[3990,60,"purple",1,1],[4080,0,"purple",1,1],[4200,-60,"block",7,1],[4290,0,"text",1,1,["Great job! It's time for the ultimate challange! Good luck!",8]],[4470,-90,"orange",4,1],[4560,-300,"orange",1,7],[4650,-90,"purple",2,1],[4710,-90,"purple",1,1],[4710,-330,"purple",1,8],[4800,-90,"orange",5,1],[4950,-30,"purple",4,1],[4920,-30,"purple",1,1],[5190,-210,"orange",1,5],[5190,-90,"orange",1,4],[5130,0,"orange",2,1],[5280,150,"block",7,1],[5400,120,"block",3,1],[5430,90,"block",2,1],[5460,60,"block",1,1],[5370,210,"text",1,1,["Good job! If you want more info on timed blocks, play our advanced tutorial on Floor 2! Thanks for playing!",7]],[5520,-120,"win",6,7]]
+};
 
 
 
