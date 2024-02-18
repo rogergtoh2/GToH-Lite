@@ -3,7 +3,7 @@ lvlData[-11] = {
   "format": 2,
   "spawn": [150, 210],
   "about": { name: 'By rogersd and eren', diff: "Tutorials", create: ''},
-  "levels": [95],
+  "levels": [95,96,97,98,99],
   "data": [
     [220,120,"portal",1,1,[95]],
     [350,120,"portal",1,1,[96]],
