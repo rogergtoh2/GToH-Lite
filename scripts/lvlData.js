@@ -5,9 +5,9 @@ lvlData[-11] = {
   "about": { name: 'By rogersd and eren', diff: "Tutorials", create: ''},
   "levels": [95,96,97,98,99],
   "data": [
-    [200,120,"portal",1,1,[95]],
-    [350,120,"portal",1,1,[96]],
-    [480,120,"portal",1,1,[97]],
+    [350,120,"portal",1,1,[95]],
+    [480,120,"portal",1,1,[96]],
+    [620,120,"portal",1,1,[97]],
     [620,-300,"portal",1,1,[98]],
     [475,-300,"portal",1,1,[99]],
     [60,135,"portal",1,1,[-2]],
