@@ -1,4 +1,13 @@
 var lvlData = [];
+lvlData[-12] = {
+  "format": 2,
+  "spawn": [150, 210],
+  "about": { name: 'Difficulty: Placeholder', diff: "World Four", create: ''},
+  "levels": [],
+  "data": [
+    [90,240,"block",5,1],[240,240,"block",7,1],[60,180,"block",1,3],[450,240,"block",7,1],[630,210,"bounce",1,1],[660,-30,"njump",1,10],[660,-240,"njump",1,7],[180,30,"block",6,1],[150,-240,"njump",1,10],[360,30,"block",8,1],[60,30,"njump",1,8],[90,30,"njump",2,1]
+    ]
+}
 lvlData[-11] = {
   "format": 2,
   "spawn": [150, 210],
@@ -79,7 +88,7 @@ lvlData[-7] = {
   "spawn": [150, 210],
   "about": { name: 'Difficulty: 2/10', diff: "Planet A", create: ''},
   "music": "trac",
-  "levels": [62,63,64,65,66,68,70,71,77,78],
+  "levels": [62,63,64,65,66,68,70,72,77,78],
   "data": [
   [250,-150,'portal',1,1,[63]],
   [85,-150,'portal',1,1,[62]],
