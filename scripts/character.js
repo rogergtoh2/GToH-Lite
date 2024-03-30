@@ -138,7 +138,7 @@ class Character {
                 statuses.push('rjump');
               }
               return true;
-            case 'lowgravblock'
+            case 'lowgravblock':
               if (!statuses.includes('icy')) {
                 statuses.push('icy');
               }
