@@ -88,7 +88,7 @@ var blockTypeButtons = [
   ['vines', 'vine'],
   ['textblock', 'text', {tags: ["test", 30]}],
   ['water', 'water'],
-  ['lowgravblock', 'lowgravblock']
+  ['lowgravblock', 'lowgrav']
 ];
 var sideBarOptions = {
   key: [
