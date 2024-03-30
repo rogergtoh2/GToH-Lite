@@ -73,9 +73,9 @@ class Block {
       case 'textblock':
         this.img = cliDir + 'textures/text.png';
         break;
-      case 'lowgravblock':
-        this.img = cliDir + 'textures/lowgrav.png';
-        break;
+      //case 'lowgravblock':
+       // this.img = cliDir + 'textures/lowgrav.png';
+      //  break;
       case 'red':
         this.img = cliDir + 'textures/redblock.png';
         break;
