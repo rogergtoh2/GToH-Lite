@@ -169,11 +169,11 @@ function DrawFrame(debug = true, clear = true) {
   }
   drawQueue = [];
   drawTextQueue = [];
-  ctx.font = '20px MinecraftRegular';
-  ctx.textAlign = 'left';
+  ctx.font = '12px MinecraftRegular';
+  ctx.textAlign = 'center';
   if (debug !== false) {
     ctx.fillText(`Timer: ${Timer / 40}  Ping: ${Ping}`, 0, 20);
-    ctx.fillText(`X: ${Player.x} Y: ${Player.y}`, 0, 16);
+    ctx.fillText(`X: ${Player.x} Y: ${Player.y}`, 0, 33);
     if (debug === 2) {
       ctx.fillText(`xA: ${Player.xAccel} yA: ${Player.yAccel} cj: ${Player.canJump} wj: ${Player.wallJump}`, 0, 46);
     }
