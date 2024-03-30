@@ -170,7 +170,7 @@ function DrawFrame(debug = true, clear = true) {
   drawQueue = [];
   drawTextQueue = [];
   ctx.font = '20px MinecraftRegular';
-  ctx.textAlign = 'left';
+  ctx.textAlign = 'middle';
   if (debug !== false) {
     ctx.fillText(`Timer: ${Timer / 40}  Ping: ${Ping}`, 0, 20);
     ctx.fillText(`X: ${Player.x} Y: ${Player.y}`, 0, 33);
