@@ -87,8 +87,8 @@ var blockTypeButtons = [
   ['rgravblock', 'greverse'],
   ['vines', 'vine'],
   ['textblock', 'text', {tags: ["test", 30]}],
-  ['water', 'water'],
-  ['lowgravblock', 'lowgrav']
+  ['water', 'water']
+  //['lowgravblock', 'lowgrav']
 ];
 var sideBarOptions = {
   key: [
