@@ -138,6 +138,11 @@ class Character {
                 statuses.push('rjump');
               }
               return true;
+            case 'lowgravblock'
+              if (!statuses.includes('lowgrav')) {
+                statuses.push('lowgrav');
+              }
+              return true;
             case 'die':
               newlvl = WorldId;
               return true;
@@ -282,7 +287,7 @@ class Character {
       this.wallJump--;
 
     //limit xAccel
-    if (Math.abs(this.xAccel) > this.speed + ((statuses.includes('icy')) ? 3 : 0) - ((statuses.includes('mud')) ? 3 : 0)&& this.wallJump === 0) {
+    if (Math.abs(this.xAccel) > this.speed + ((statuses.includes('icy')) ? 3 : 0) - ((statuses.includes('mud')) ? 3 : 0)&& this.wallJump === 0) - ((statuses.includes('lowgrav')) ? 3 : 0) {
       this.xAccel -= Math.sign(this.xAccel);
     }
 
