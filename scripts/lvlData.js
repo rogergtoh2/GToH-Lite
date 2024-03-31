@@ -1,7 +1,7 @@
 var lvlData = [];
 lvlData[-13] = {
   "format": 2,
-  "spawn": [150, 210],
+  "spawn": [150, 60],
   "about": { name: 'Difficulty: 7/10', diff: "Planet D", create: ''},
   "levels": [],
   "data": [
