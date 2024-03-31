@@ -176,6 +176,8 @@ function DrawFrame(debug = true, clear = true) {
     ctx.fillText(`X: ${Player.x} Y: ${Player.y}`, 0, 33);
     if (debug === 2) {
       ctx.fillText(`xA: ${Player.xAccel} yA: ${Player.yAccel} cj: ${Player.canJump} wj: ${Player.wallJump}`, 0, 46);
+} else {
+      ctx.fillText(`GToH Expanded 0.4.0`, 0, 46); 
     }
   } 
   if (pressTab) {
