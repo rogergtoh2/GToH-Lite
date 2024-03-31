@@ -69,7 +69,7 @@ function CreateWorld(id, useID = true) {
     //worldText.push(new Text('tab to see players online', 670, -120, 12));
     //worldText.push(new Text('L to set username', 670, -100, 12));
     //worldText.push(new Text('/ for console', 670, -80, 12));
-    worldText.push(new Text('GToH Expanded 0.3.0', 670, -40, 12));
+    worldText.push(new Text('GToH Expanded 0.4.0', 670, -40, 12));
     //worldText.push(new Text('Coming March 19...', 360, -320, 12));
   }
   Player = new Character(PlayerSkin);
