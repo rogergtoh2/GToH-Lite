@@ -71,6 +71,7 @@ function CreateWorld(id, useID = true) {
     //worldText.push(new Text('/ for console', 670, -80, 12));
     worldText.push(new Text('GToH Expanded 0.4.0', 670, -40, 12));
     //worldText.push(new Text('Coming March 19...', 360, -320, 12));
+    world.push(new AnimatedBlock(635, -320, 'portalgreyanim.png',
   }
   Player = new Character(PlayerSkin);
   Player.x = lvl.spawn[0];
