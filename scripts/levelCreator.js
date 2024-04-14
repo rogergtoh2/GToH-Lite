@@ -88,7 +88,8 @@ var blockTypeButtons = [
   ['vines', 'vine'],
   ['textblock', 'text', {tags: ["test", 30]}],
   ['water', 'water'],
-  ['flower', 'flower']
+  ['flower', 'flower'],
+  ['sparkle', 'sparkle']
  // ['rose', 'Rose']
   //['lowgravblock', 'lowgrav']
 ];
