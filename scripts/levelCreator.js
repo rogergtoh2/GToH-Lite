@@ -89,7 +89,8 @@ var blockTypeButtons = [
   ['textblock', 'text', {tags: ["test", 30]}],
   ['water', 'water'],
   ['flower', 'flower'],
-  ['sparkle', 'sparkle']
+  ['sparkle', 'sparkle'],
+  ['dirtblock2', 'dirtblock']
  // ['rose', 'Rose']
   //['lowgravblock', 'lowgrav']
 ];
