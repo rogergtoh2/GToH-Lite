@@ -154,6 +154,8 @@ class Character {
               break;
             case 'rose':
               break;
+            case 'flower':
+              break;
             case 'textblock':
               worldText.push(new Text('/ for console', 150, -250, 12));
               break;
