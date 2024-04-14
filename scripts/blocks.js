@@ -186,6 +186,9 @@ class Block {
       case 'purple':
         this.img = cliDir + `textures/purpleblock.png`;
         break;
+      case 'flower':
+        this.img = cliDir + 'textures/flower.png';
+        break;
       case 'mud':
         this.img = cliDir + `textures/mudblock.png`;
         break;
