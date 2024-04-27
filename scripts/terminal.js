@@ -157,7 +157,8 @@ function process_command(command = null) {
       process_command("fly");
       process_command("tnc");
       break;
-    case "invincible"
+    case "invincible":
+      cheatsEnabled = true;
      if (command.length === 1) {
      Player.disableTouch = !Player.disableTouch;
       break;
