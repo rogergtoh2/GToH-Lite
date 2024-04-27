@@ -71,10 +71,8 @@ var blockTypeButtons = [
   ['block','block'],
   ['smallcursor', 'small'],
   ['blueblock', 'blue'],
-  ['redblock', 'red'],
-  ['bounceUp', 'bounce'],
   ['orangeblock', 'orange'],
-  ['purpleblock', 'purple'],
+  ['bounceUp', 'bounce'],
   ['mudblock', 'mud'],
   ['nojumpblock', 'rjump'],
   ['metalblock', 'njump'],
@@ -88,13 +86,18 @@ var blockTypeButtons = [
   ['vines', 'vine'],
   ['textblock', 'text', {tags: ["test", 30]}],
   ['water', 'water'],
-  ['flower', 'flower'],
-  ['sparkle', 'sparkle'],
-  ['dirtblock2', 'dirtblock']
  // ['rose', 'Rose']
   //['lowgravblock', 'lowgrav']
 ];
 var sideBarOptions = {
+  orange:
+    ['orangeblock', 'orange'],
+    ['purpleblock', 'purple']
+  ],
+  blue:
+    ['blueblock', 'blue'],
+    ['redblock', 'red']
+  ],
   key: [
     ['keys/key0', 'key', {tags: [0]}],
     ['keys/key1', 'key', {tags: [1]}],
@@ -137,11 +140,14 @@ var sideBarOptions = {
   ],
   block: [
     ['block', 'block'],
-    ['grassblock', 'fullgrass']
+    ['grassblock', 'fullgrass'],
+    ['dirtblock2', 'dirtblock']
   ],
   vine: [
     ['vines', 'vine'],
-    ['bblank', 'blank2']
+    ['bblank', 'blank2'],
+    ['flower', 'flower'],
+    ['sparkle', 'sparkle']
   ],
   text: [
     ['errorblock', null, {type: 'text'}],
