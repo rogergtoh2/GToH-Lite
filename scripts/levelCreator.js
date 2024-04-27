@@ -88,10 +88,6 @@ var blockTypeButtons = [
   ['water', 'water']
 ];
 var sideBarOptions = {
-  orange:
-    ['orangeblock', 'orange'],
-    ['purpleblock', 'purple']
-  ],
   blue:
     ['blueblock', 'blue'],
     ['redblock', 'red']
