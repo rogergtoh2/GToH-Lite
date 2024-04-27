@@ -85,7 +85,7 @@ var blockTypeButtons = [
   ['rgravblock', 'greverse'],
   ['vines', 'vine'],
   ['textblock', 'text', {tags: ["test", 30]}],
-  ['water', 'water'],
+  ['water', 'water']
  // ['rose', 'Rose']
   //['lowgravblock', 'lowgrav']
 ];
