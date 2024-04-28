@@ -138,6 +138,11 @@ class Character {
                 statuses.push('rjump');
               }
               return true;
+        //    case 'lowgravblock':
+         //     if (!statuses.includes('icy')) {
+          //      statuses.push('icy');
+         //     }
+         //     return true;
             case 'die':
               newlvl = WorldId;
               return true;
@@ -147,6 +152,14 @@ class Character {
               return;
             case 'vine':
               break;
+            case 'rose':
+              break;
+            case 'flower':
+              break;
+            case 'sparkle':
+              break;
+            case 'dirtblock':
+              return true;
             case 'textblock':
               worldText.push(new Text('/ for console', 150, -250, 12));
               break;
