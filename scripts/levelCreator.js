@@ -87,7 +87,8 @@ var blockTypeButtons = [
   ['textblock', 'text', {tags: ["test", 30]}],
   ['water', 'water'],
   ['lgravblock', 'lgravblock'],
-  ['hgravblock', 'hgravblock']
+  ['hgravblock', 'hgravblock'],
+  ['norgravblock', 'norgravblock']
 ];
 var sideBarOptions = {
   orange: [
