@@ -169,6 +169,8 @@ class Character {
             case 'lgravblock':
               plyr.gravityMultiplier = 0.5;
               break;
+            case 'hgravblock':
+              plyr.gravMultiplier = 1.5;
             case 'dirt':
               return true;
             case 'decor':
