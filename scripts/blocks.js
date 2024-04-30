@@ -85,6 +85,9 @@ class Block {
       case 'lgravblock':
         this.img = cliDir + 'textures/lgravblock.png';
         break;
+      case 'hgravblock':
+        this.img = cliDir + 'textures/hgravblock.png';
+        break;
       //case 'lowgravblock':
        // this.img = cliDir + 'textures/lowgrav.png';
       //  break;
