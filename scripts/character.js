@@ -166,6 +166,9 @@ class Character {
               break;
             case 'blank2':
               break;
+            case 'lgravblock':
+              plyr.gravityMultiplier = 0.5;
+              break;
             case 'dirt':
               return true;
             case 'decor':
@@ -193,7 +196,7 @@ class Character {
 
     //gravity go down
     if (!this.gravityDisabled || this.pressDown)
-      this.yAccel += gravitySign
+      this.yAccel += gravitySign * this.gravityMultiplier
     if (statuses.includes('water') && this.pressDown)
       this.yAccel -= gravitySign * 2
 
