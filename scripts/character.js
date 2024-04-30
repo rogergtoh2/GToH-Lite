@@ -38,6 +38,7 @@ class Character {
     this.width = 30;
     this.height = 30;
     this.gravityReversed = false;
+    this.gravityMultiplier = 1;
   }
 
 
