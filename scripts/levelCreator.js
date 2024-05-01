@@ -93,7 +93,7 @@ var sideBarOptions = {
     ['lgravblock', 'lgravblock'],
     ['hgravblock', 'hgravblock'],
     ['vlgravblock', 'vlgravblock'],
-    ['vhgravblock', 'vhgravblock'],
+   // ['vhgravblock', 'vhgravblock'],
     ['normalgravblock', 'normalgravblock']
    ],
   orange: [
