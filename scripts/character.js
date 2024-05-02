@@ -38,6 +38,7 @@ class Character {
     this.width = 30;
     this.height = 30;
     this.gravityReversed = false;
+    this.gravityMultiplier = 1;
   }
 
 
@@ -165,6 +166,21 @@ class Character {
               break;
             case 'blank2':
               break;
+            case 'lgravblock':
+              plyr.gravityMultiplier = 0.5;
+              break;
+            case 'hgravblock':
+              plyr.gravityMultiplier = 1.5;
+              break;
+            case 'vlgravblock':
+              plyr.gravityMultiplier = 0.25;
+              break;
+            case 'hlgravblock':
+              plyr.gravityMultiplier = 2;
+              break;
+            case 'normalgravblock':
+              plyr.gravityMultiplier = 1;
+              break;
             case 'dirt':
               return true;
             case 'decor':
@@ -192,7 +208,7 @@ class Character {
 
     //gravity go down
     if (!this.gravityDisabled || this.pressDown)
-      this.yAccel += gravitySign
+      this.yAccel += gravitySign * this.gravityMultiplier
     if (statuses.includes('water') && this.pressDown)
       this.yAccel -= gravitySign * 2
 

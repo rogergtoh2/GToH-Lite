@@ -85,9 +85,17 @@ var blockTypeButtons = [
   ['rgravblock', 'greverse'],
   ['vines', 'vine'],
   ['textblock', 'text', {tags: ["test", 30]}],
-  ['water', 'water']
+  ['water', 'water'],
+  ['lgravblock', 'lgravblock']
 ];
 var sideBarOptions = {
+  lgravblock: [
+    ['lgravblock', 'lgravblock'],
+    ['hgravblock', 'hgravblock'],
+    ['vlgravblock', 'vlgravblock'],
+   // ['vhgravblock', 'vhgravblock'],
+    ['normalgravblock', 'normalgravblock']
+   ],
   orange: [
    ['orangeblock', 'orange'],
    ['purpleblock', 'purple']
