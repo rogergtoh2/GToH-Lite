@@ -73,6 +73,9 @@ class Block {
       case 'sparkle':
        this.img = cliDir + 'textures/sparkle.png';
         break;
+      case 'pee':
+        this.img = cliDir + 'textures/pee.png';
+        break;
       case 'dirtblock':
         this.img = cliDir + 'textures/dirtblock2.png';
          break;
