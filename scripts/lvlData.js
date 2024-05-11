@@ -26,7 +26,7 @@ lvlData[-15] = {
 lvlData[-14] = {
   "format": 2,
   "spawn": [150, 60],
-  "about": { name: '', diff: "May Challenge", create: ''},
+  "about": { name: '', diff: "Season 1", create: 'Underwater'},
  "levels": [117,120,121,126,150],
   "data": [
     [280,-30,"portal",1,1,[117]],
