@@ -359,6 +359,7 @@ lvlData[3] = {
   "format": 1,//old levels follow format 1
   "spawn": [150, 60],//old levels have [150,60] spawn pos
   "about": { name: 'Tower of Learning', create: '', diff: 'Easy'},
+  "music": 'main',
   "reward": {Easy: 1},
   "data":[
     [0, 240, 'block', 20, 1],
