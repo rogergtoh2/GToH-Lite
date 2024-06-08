@@ -1,3 +1,27 @@
+class LevelStars {
+  constructor(levelID, maxTime, maxSwaps) {
+    this.level = levelID;
+    this.maxTime = maxTime;
+    this.maxSwaps = maxSwaps;
+
+    this.starsAchieved = [false, false, false];
+  }
+
+  updateStars(time, swaps) {
+    this.starsAchieved[0] = true
+    if (time <= this.maxTime) {
+      this.starsAchieved[1] = true
+    }
+    if (swaps <= this.maxSwaps) {
+      this.starsAchieved[2] = true
+    }
+  }
+
+  getStars() {
+    return this.starsAchieved.reduce((a, b) => a + b, 0)
+  }
+}
+
 function CreateBlocks(x, y, type = 'block', length = 1, height = 1, extraTags = [], oImg = null) {
   let blockSize = 30;
   if (type === 'text') {
