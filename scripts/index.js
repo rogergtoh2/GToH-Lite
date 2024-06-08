@@ -181,7 +181,7 @@ function updateStars(time, swaps = 100) {
   if (!("starConditions" in lvlData[WorldId])) return
   const conds = lvlData[WorldId].starConditions
   if (AllStars[WorldId] == undefined) {
-    AllStars[WorldId] = new LevelStars(WorldId, conds.time, 1);
+    AllStars[WorldId] = new LevelStars(WorldId, conds, 1);
   }
   AllStars[WorldId].updateStars(time, swaps)
 }

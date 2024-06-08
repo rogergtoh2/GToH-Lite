@@ -1,19 +1,17 @@
 class LevelStars {
-  constructor(levelID, maxTime, maxSwaps) {
+  constructor(levelID, maxTimes, maxSwaps) {
     this.level = levelID;
-    this.maxTime = maxTime;
+    this.maxTimes = maxTimes;
     this.maxSwaps = maxSwaps;
 
     this.starsAchieved = [false, false, false];
   }
 
   updateStars(time, swaps) {
-    this.starsAchieved[0] = true
-    if (time <= this.maxTime) {
-      this.starsAchieved[1] = true
-    }
-    if (swaps <= this.maxSwaps) {
-      this.starsAchieved[2] = true
+    for (const i in this.maxTimes) {
+      if (time <= this.maxTimes[i]) {
+        this.starsAchieved[i] = true
+      }
     }
   }
 
