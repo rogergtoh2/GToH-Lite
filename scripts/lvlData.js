@@ -339,7 +339,7 @@ lvlData[2] = {
   "spawn": [150, 60],//old levels have [150,60] spawn pos
   "about": { name: 'Steeple of Simplicity', create: '', diff: 'Medium'},
   "reward": {Medium: 1},
-  "starConditions": {time: 20},
+  "starConditions": {time: 30}, {time: 25}, {time: 20},
   "data":[
     [0, 240, 'block', 20, 1],
     [0, 180, 'block', 4, 3],
