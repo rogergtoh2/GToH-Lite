@@ -1,5 +1,5 @@
 "use strict";
-var tempInterval, mainBeat = 400, mainInc = 0, skipIntro = true; 
+var tempInterval, mainBeat = 400, mainInc = 0, skipIntro = false; 
 skipIntro && (mainInc = 3, mainBeat = 100), document.body.style.width = "100%", document.body.style.height = "100%", myCanvas.height = window.innerHeight, myCanvas.width = window.innerWidth, ctx.textAlign = "center", ctx.font = "15px MinecraftRegular";
 { 
   let t = new Image; 
