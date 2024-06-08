@@ -22,6 +22,8 @@ class LevelStars {
   }
 }
 
+var AllStars = []
+
 function CreateBlocks(x, y, type = 'block', length = 1, height = 1, extraTags = [], oImg = null) {
   let blockSize = 30;
   if (type === 'text') {
@@ -77,6 +79,14 @@ function CreateWorld(id, useID = true) {
   } else 
     levelFormat = 1;
   for (let i = 0; i < lvl.data.length; i++) {
+    if (lvl.data[i][2] == "portal" && "starConditions" in lvlData[lvl.data[i][5][0]]) {
+      var stars = 0
+      if (AllStars[lvl.data[i][5][0]] != undefined) {
+        stars = AllStars[lvl.data[i][5][0]].getStars();
+      }
+      CreateBlocks(lvl.data[i][0], lvl.data[i][1] + 30, "stars" + stars, 1, 1)
+      console.log("stars")
+    }
     CreateBlocks(...lvl.data[i]);
   }
   if ("music" in lvl) {

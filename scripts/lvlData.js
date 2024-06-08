@@ -317,6 +317,7 @@ lvlData[1] = {
   "spawn": [150, 60],//old levels have [150,60] spawn pos
   "about": { name: 'Steeple of Color', create: '', diff: 'Hard'},
   "reward": {Hard: 1},
+  "starConditions": {time: 7},
   "data":[
     [0,240,'block',10,1],
     [50,120,'block',1,2],
@@ -338,6 +339,7 @@ lvlData[2] = {
   "spawn": [150, 60],//old levels have [150,60] spawn pos
   "about": { name: 'Steeple of Simplicity', create: '', diff: 'Medium'},
   "reward": {Medium: 1},
+  "starConditions": {time: 20},
   "data":[
     [0, 240, 'block', 20, 1],
     [0, 180, 'block', 4, 3],

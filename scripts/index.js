@@ -70,6 +70,7 @@ function GameTick() {
       const i = Timer / 40;
       //if (levelsComplete[WorldId] > i || levelsComplete[WorldId] === undefined || levelsComplete[WorldId] === null) {
         if (!cheatsEnabled) {
+          updateStars(i)
           if (levelsComplete[WorldId] > i || levelsComplete[WorldId] === undefined || levelsComplete[WorldId] === null || levelsComplete[WorldId] === false) {
             levelsComplete[WorldId] = i;
             localStorage.setItem("levels", JSON.stringify(levelsComplete));
@@ -175,6 +176,16 @@ function GameTick() {
   ChatTick();
   DrawFrame(false, false);
 }
+
+function updateStars(time, swaps = 100) {
+  if (!("starConditions" in lvlData[WorldId])) return
+  const conds = lvlData[WorldId].starConditions
+  if (AllStars[WorldId] == undefined) {
+    AllStars[WorldId] = new LevelStars(WorldId, conds.time, 1);
+  }
+  AllStars[WorldId].updateStars(time, swaps)
+}
+
 
 
 //funny stuff
