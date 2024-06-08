@@ -183,6 +183,14 @@ class Character {
               break;
             case 'dirt':
               return true;
+            case 'stars0':
+              break;
+            case 'stars1':
+              break;
+            case 'stars2':
+              break;
+            case 'stars3':
+              break;
             case 'decor':
               if(i.tags[1] === false && i.tags.includes('moderatorTest')) {
                 i.tags[1] = true;
