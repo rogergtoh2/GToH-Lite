@@ -273,7 +273,7 @@ class Character {
           if (o === 18) {
             this.y += 19 * gravitySign * this.gravityMultiplier;
             while (touch(this))
-              this.y += gravitySign * playerImg.gravityMultiplier;
+              this.y += gravitySign * this.gravityMultiplier;
           }
         }
         if (this.yAccel > 16) {
