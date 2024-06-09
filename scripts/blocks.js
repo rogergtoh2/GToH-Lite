@@ -143,7 +143,7 @@ class Block {
         if (lvlData[this.tags[0]].about.create !== '')
           worldText.push(new Text('By ' + lvlData[this.tags[0]].about.create, this.x + 15, this.y - 35, 8));
         if (levelsComplete[this.tags[0]] !== false && levelsComplete[this.tags[0]] !== null && levelsComplete[this.tags[0]] !== undefined)
-          worldText.push(new Text(`Best Time: ${levelsComplete[this.tags[0]]}`, this.x + 15, this.y + 70, 8));
+          worldText.push(new Text(`Best Time: ${levelsComplete[this.tags[0]]}`, this.x + 15, this.y + 60, 8));
         if (this.tags[0] <= 0) break;
         /* NO WORLD RECORD
         if ((worldRecords[this.tags[0]] === undefined || worldRecords[this.tags[0]] === null)) {
