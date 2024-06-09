@@ -112,8 +112,7 @@ function CreateWorld(id, useID = true) {
       if (AllStars[lvl.data[i][5][0]] != undefined) {
         stars = AllStars[lvl.data[i][5][0]].getStars();
       }
-      CreateBlocks(lvl.data[i][0], lvl.data[i][1] + 30, "stars" + stars, 1, 1)
-      console.log("stars")
+      CreateBlocks(lvl.data[i][0], lvl.data[i][1] + 30, "stars" + stars, 1, 1);
     }
     CreateBlocks(...lvl.data[i]);
   }

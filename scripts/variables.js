@@ -1,4 +1,5 @@
 var warning = false; //set to true if redesgining code that could potentially break game
+var multiplayerEnabled = false;
 
 const cliDir = './';
 
