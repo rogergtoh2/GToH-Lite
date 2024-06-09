@@ -118,6 +118,7 @@ function syncProgress() {
   console.log("synced levels")
   if (lvls == null) return;
   levelsComplete = JSON.parse(lvls);
+  updateAllStars()
 }
 levelsComplete = new Array(lvlData.length).fill(false);
 syncProgress()

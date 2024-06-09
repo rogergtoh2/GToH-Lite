@@ -10,17 +10,36 @@ class LevelStars {
   updateStars(time, swaps) {
     for (const i in this.maxTimes) {
       if (time <= this.maxTimes[i]) {
-        this.starsAchieved[i] = true
+        this.starsAchieved[i] = true;
       }
     }
   }
 
   getStars() {
-    return this.starsAchieved.reduce((a, b) => a + b, 0)
+    return this.starsAchieved.reduce((a, b) => a + b, 0);
   }
 }
 
 var AllStars = []
+
+function initializeAllStars() {
+  for (const i in lvlData) {
+    if ("starConditions" in lvlData[i]) {
+      AllStars[i] = new LevelStars(i, lvlData[i].starConditions, 1);
+    }
+  }
+}
+
+function updateAllStars() {
+  for (const i in AllStars) {
+    if (AllStars[i] == undefined) continue;
+    if (levelsComplete[i] == false) continue;
+
+    AllStars[i].updateStars(levelsComplete[i]);
+  }
+}
+
+initializeAllStars()
 
 function CreateBlocks(x, y, type = 'block', length = 1, height = 1, extraTags = [], oImg = null) {
   let blockSize = 30;
