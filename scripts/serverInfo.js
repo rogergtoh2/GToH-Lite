@@ -3,6 +3,18 @@ var missedConnections = 0;
 var serverDisconnected = false;
 
 if (socket != undefined) {
+  socket.emit("socket initialized");
+  socket.on("old version", () => {
+    alert("Your client version is unsupported by the server. If refreshing doesn't fix this, ask the server owner to update the client version used!");
+  });
+  socket.on("version check", ServerVersion => {
+    if (ServerVersion < MinimumServerVersion) {
+      socket.emit("version check", ClientVersion, MinimumServerVersion);
+      alert("The server version is too old for the client. Ask the server owner to update their server");
+    } else
+      socket.emit("version check", ClientVersion, false);
+  });
+
   socket.on('server info', (info) => {
     Ping = Date.now() - latestPing;
     missedConnections = 0;
@@ -110,6 +122,7 @@ if (socket != undefined) {
   });
   socket.io.on("reconnect", (attempt) => {
     if (localStorage.getItem('login') !== null) {
+      socket.emit("socket initialized")
       // autoLogin(JSON.parse(localStorage.getItem('login'))); DISABLED BECAUSE NO ACCOUNT SYSTEM
     }
   });

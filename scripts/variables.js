@@ -1,5 +1,7 @@
 console.log("loading variables...")
 var warning = false; //set to true if redesgining code that could potentially break game
+const ClientVersion = 1;
+const MinimumServerVersion = 1;
 
 //draw
 var drawQueue = [];
@@ -61,7 +63,6 @@ var ChatOpen = false;
 var peopleLeft = 0;
 
 //online
-var ClientVersion;
 var ClientNumber;
 var login;
 var Username = '';
