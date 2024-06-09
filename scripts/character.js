@@ -221,7 +221,7 @@ class Character {
       this.yAccel -= gravitySign * 2
 
     //limit gravity
-    if (((this.yAccel > maxGravity) && gravitySign === 1) || ((this.yAccel < -maxGravity) && gravitySign === -1)) {
+    if (((this.yAccel > maxGravity * Math.max(this.gravityMultiplier, 0.5) && gravitySign === 1) || ((this.yAccel < -maxGravity * Math.max(this.gravityMultiplier, 0.5))) && gravitySign === -1)) {
       this.yAccel -= gravitySign;
       console.log(this.yAccel)
     }
@@ -271,11 +271,11 @@ class Character {
         prevTouchIcy = false;
         for (let o = 0; o < 19; o++) {
           if (!touch(this)) break;
-          this.y -= gravitySign;
+          this.y -= gravitySign * this.gravityMultiplier;
           if (o === 18) {
-            this.y += 19 * gravitySign;
+            this.y += 19 * gravitySign * this.gravityMultiplier;
             while (touch(this))
-              this.y += gravitySign;
+              this.y += gravitySign * playerImg.gravityMultiplier;
           }
         }
         if (this.yAccel > 16) {
