@@ -14,6 +14,10 @@ class OnlinePlayer {
     this.userText.y = this.y - 5;
     AddDrawQueue('text', this.userText);
   }
+  updateName(name) {
+    this.user = name;
+    this.userText.text = name;
+  }
 }
 
 class Character {

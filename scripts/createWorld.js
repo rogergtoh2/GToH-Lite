@@ -1,3 +1,4 @@
+console.log("loading createWorld...")
 class LevelStars {
   constructor(levelID, maxTimes, maxSwaps) {
     this.level = levelID;

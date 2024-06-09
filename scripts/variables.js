@@ -1,7 +1,5 @@
+console.log("loading variables...")
 var warning = false; //set to true if redesgining code that could potentially break game
-var multiplayerEnabled = false;
-
-const cliDir = './';
 
 //draw
 var drawQueue = [];
@@ -120,6 +118,14 @@ function fcoll(obj, obj2) {
   return colliding(obj.x, obj.y, obj.width, obj.height, obj2.x, obj2.y, obj2.width, obj2.height);
 }
 
+function getPlayerIdByName(name) {
+  for (const plyr in OtherPlayers) {
+    if (OtherPlayers[plyr].user === name) {
+      return plyr;
+    }
+  }
+  return false;
+}
 
 var preloadList = [
   'block',

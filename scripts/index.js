@@ -1,4 +1,5 @@
 'use strict';
+console.log("loading index...")
 //do player cool
 var Player = new Character(playerImg);
 //CreateWorld(-2);
@@ -449,17 +450,13 @@ socket.on('true login', (rer, logging)=>{
       return;
     }
   } else if (rer == true) {
-      alert("This login is already taken.");
-  
-      return;
-    } else {
-      alert("new account created");
-    }
-  });
+    alert("This login is already taken.");
 
-  if (localStorage.getItem('login') !== null) {
-    autoLogin(JSON.parse(localStorage.getItem('login')));
+    return;
+  } else {
+    alert("new account created");
   }
+});
 
 /*
 X = 150

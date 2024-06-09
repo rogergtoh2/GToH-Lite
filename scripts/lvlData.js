@@ -1,3 +1,4 @@
+console.log('loading lvlData...')
 var lvlData = [];
 //lvlData[-16] = {
   //"format": 2,

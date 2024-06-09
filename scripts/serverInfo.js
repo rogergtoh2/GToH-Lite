@@ -2,7 +2,7 @@ var latestPing = Date.now();
 var missedConnections = 0;
 var serverDisconnected = false;
 
-if (multiplayerEnabled) {
+if (socket != undefined) {
   socket.on('server info', (info) => {
     Ping = Date.now() - latestPing;
     missedConnections = 0;
@@ -43,14 +43,15 @@ if (multiplayerEnabled) {
   }
   socket.on('player update', (players) => {
     for (const plyr of players) {
-      if (plyr[3] === Username) continue;
-      if (plyr[3] in OtherPlayers) {
-        OtherPlayers[plyr[3]].x = plyr[0];
-        OtherPlayers[plyr[3]].y = plyr[1];
-        OtherPlayers[plyr[3]].location = plyr[2];
-        OtherPlayers[plyr[3]].img = cliDir + 'textures/skins/' + plyr[4];
+      if (plyr[5] === socket.id) continue;
+      if (plyr[5] in OtherPlayers) {
+        OtherPlayers[plyr[5]].x = plyr[0];
+        OtherPlayers[plyr[5]].y = plyr[1];
+        OtherPlayers[plyr[5]].location = plyr[2];
+        OtherPlayers[plyr[5]].img = cliDir + 'textures/skins/' + plyr[4];
+        OtherPlayers[plyr[5]].updateName(plyr[3]);
       } else {
-        OtherPlayers[plyr[3]] = new OnlinePlayer(cliDir + 'textures/skins/' + plyr[4], plyr[0], plyr[1], plyr[3]);
+        OtherPlayers[plyr[5]] = new OnlinePlayer(cliDir + 'textures/skins/' + plyr[4], plyr[0], plyr[1], plyr[3]);
       }
     }
     for (const plyr in OtherPlayers) {
@@ -60,7 +61,7 @@ if (multiplayerEnabled) {
       }
       var contain = false;
       for (const us of players) {
-        if (us[3] === plyr) {
+        if (us[5] === plyr) {
           contain = true;
           break;
         }
@@ -109,7 +110,7 @@ if (multiplayerEnabled) {
   });
   socket.io.on("reconnect", (attempt) => {
     if (localStorage.getItem('login') !== null) {
-      autoLogin(JSON.parse(localStorage.getItem('login')));
+      // autoLogin(JSON.parse(localStorage.getItem('login'))); DISABLED BECAUSE NO ACCOUNT SYSTEM
     }
   });
 }
