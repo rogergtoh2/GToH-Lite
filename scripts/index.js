@@ -70,10 +70,14 @@ function GameTick() {
       const i = Timer / 40;
       //if (levelsComplete[WorldId] > i || levelsComplete[WorldId] === undefined || levelsComplete[WorldId] === null) {
         if (!cheatsEnabled) {
-          updateStars(i)
+          updateStars(i, TimesSwapped)
           if (levelsComplete[WorldId] > i || levelsComplete[WorldId] === undefined || levelsComplete[WorldId] === null || levelsComplete[WorldId] === false) {
             levelsComplete[WorldId] = i;
             localStorage.setItem("levels", JSON.stringify(levelsComplete));
+          }
+          if (swapsComplete[WorldId] == undefined || swapsComplete[WorldId] > TimesSwapped) {
+            swapsComplete[WorldId] = TimesSwapped;
+            localStorage.setItem("swaps", JSON.stringify(swapsComplete));
           }
           //socket.emit('new pb', WorldId, i, ReplayKeys); REMOVED BECAUSE SOCKET IS BROKEN IN SINGLEPLAYER
           AddChat(`Time: ${Timer / 40}`);
@@ -178,8 +182,8 @@ function GameTick() {
 }
 
 function updateStars(time, swaps = 100) {
-  if (!("starConditions" in lvlData[WorldId])) return
-  const conds = lvlData[WorldId].starConditions
+  if (!("timeConditions" in lvlData[WorldId])) return
+  const conds = lvlData[WorldId].timeConditions
   if (AllStars[WorldId] == undefined) {
     AllStars[WorldId] = new LevelStars(WorldId, conds, 1);
   }
@@ -267,10 +271,14 @@ window.addEventListener('keydown', (EventKey) => {
       Player.pressDown = true;
       break;
     case ' ':
-      if (redActive === 1)
+      if (redActive === 1) {
         redActive = 2;
-      if (redActive === 3)
+        TimesSwapped++;
+      }
+      if (redActive === 3) {
         redActive = 0;
+        TimesSwapped++;
+      }
       break;
     case 'r':
       if (PlayTest) break;

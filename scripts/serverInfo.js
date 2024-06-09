@@ -115,9 +115,14 @@ socket.io.on("reconnect", (attempt) => {
 
 function syncProgress() {
   const lvls = localStorage.getItem("levels");
+  const swaps = localStorage.getItem("swaps");
   console.log("synced levels")
-  if (lvls == null) return;
-  levelsComplete = JSON.parse(lvls);
+  if (lvls != null) {
+    levelsComplete = JSON.parse(lvls);
+  }
+  if (swaps != null) {
+    swapsComplete = JSON.parse(swaps);
+  }
   updateAllStars()
 }
 levelsComplete = new Array(lvlData.length).fill(false);

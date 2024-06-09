@@ -231,6 +231,9 @@ class Block {
       case 'stars3':
         this.img = cliDir + `textures/3star.png`;
         break;
+      case 'stars4':
+        this.img = cliDir + `textures/4star.png`;
+        break;
       default:
         this.img = cliDir + `textures/errorblock.png`;
         break;

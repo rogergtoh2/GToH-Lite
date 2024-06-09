@@ -5,18 +5,26 @@ class LevelStars {
     this.maxSwaps = maxSwaps;
 
     this.starsAchieved = [false, false, false];
+    this.secretStarAchieved = false;
   }
 
   updateStars(time, swaps) {
-    for (const i in this.maxTimes) {
-      if (time <= this.maxTimes[i]) {
-        this.starsAchieved[i] = true;
+    if (typeof time == "number") {
+      for (const i in this.maxTimes) {
+        if (time <= this.maxTimes[i]) {
+          this.starsAchieved[i] = true;
+        }
       }
+    }
+    if (typeof swaps == "number" && swaps <= this.maxSwaps) {
+      this.secretStarAchieved = true;
     }
   }
 
   getStars() {
-    return this.starsAchieved.reduce((a, b) => a + b, 0);
+    let stars = this.starsAchieved.reduce((a, b) => a + b, 0);
+    if (stars == 3 && this.secretStarAchieved) stars = 4;
+    return stars;
   }
 }
 
@@ -24,8 +32,12 @@ var AllStars = []
 
 function initializeAllStars() {
   for (const i in lvlData) {
-    if ("starConditions" in lvlData[i]) {
-      AllStars[i] = new LevelStars(i, lvlData[i].starConditions, 1);
+    if ("timeConditions" in lvlData[i]) {
+      var swaps = -1
+      if ("swapConditions" in lvlData[i]) {
+        swaps = lvlData[i].swapConditions
+      }
+      AllStars[i] = new LevelStars(i, lvlData[i].timeConditions, swaps);
     }
   }
 }
@@ -33,9 +45,8 @@ function initializeAllStars() {
 function updateAllStars() {
   for (const i in AllStars) {
     if (AllStars[i] == undefined) continue;
-    if (levelsComplete[i] == false) continue;
 
-    AllStars[i].updateStars(levelsComplete[i]);
+    AllStars[i].updateStars(levelsComplete[i], swapsComplete[i]);
   }
 }
 
@@ -96,7 +107,7 @@ function CreateWorld(id, useID = true) {
   } else 
     levelFormat = 1;
   for (let i = 0; i < lvl.data.length; i++) {
-    if (lvl.data[i][2] == "portal" && "starConditions" in lvlData[lvl.data[i][5][0]]) {
+    if (lvl.data[i][2] == "portal" && "timeConditions" in lvlData[lvl.data[i][5][0]]) {
       var stars = 0
       if (AllStars[lvl.data[i][5][0]] != undefined) {
         stars = AllStars[lvl.data[i][5][0]].getStars();
@@ -140,6 +151,7 @@ function CreateWorld(id, useID = true) {
   Player.wallJump = 0;
   if (LobbyWorld !== WorldId) {
     Timer = 0;
+    TimesSwapped = 0;
     if (!Replaying) {
     ReplayKeys = [WorldId];
     ReplayPos = [WorldId];
