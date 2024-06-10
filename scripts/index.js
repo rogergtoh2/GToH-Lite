@@ -38,11 +38,16 @@ function ChatTick() {
     //handle deletion time
     chatQueue[i][1] = chatQueue[i][1] + 1;
     if (chatQueue[i][1] > 320) {
-      chatQueue.splice(i, 1);
+      chatLogs.push(chatQueue.splice(i, 1)[0]);
       continue;
     }
     //actually draw it
     AddDrawQueue('text', new Text(chatQueue[i][0], 0, myCanvas.height - (chatQueue.length - i) * 20 * camZ, 11, true, false, true));
+  }
+  if (pressTab) {
+    for (var i = chatLogs.length - 1; i >= 0; i--) {
+      AddDrawQueue("text", new Text(chatLogs[i][0], 0, myCanvas.height - (chatQueue.length + chatLogs.length - i) * 20 * camZ, 11, true, false, true));
+    }
   }
 }
 
