@@ -80,6 +80,7 @@ lvlData[-11] = {
   "format": 2,
   "spawn": [150, 210],
   "about": { name: 'By rogersd and eren', diff: "Tutorials", create: ''},
+  "music": "rpg1",
   "levels": [95,96,97,98,99,100,101,102,103,116,119],
   "data": [
     [325,120,"portal",1,1,[95]],
