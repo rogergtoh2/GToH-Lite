@@ -133,6 +133,15 @@ class Character {
                if (!statuses.includes('water'))
                 statuses.push('water');
               break;
+            case 'speedpad':
+              plyr.speed = 15;
+              break;
+            case 'slowpad':
+              plyr.speed = 2;
+              break;
+            case 'normalpad':
+              plyr.pressRight = true;
+              break;
             case 'mud':
               if (!statuses.includes('mud')) {
                 statuses.push('mud');

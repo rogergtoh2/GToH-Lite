@@ -86,7 +86,8 @@ var blockTypeButtons = [
   ['vines', 'vine'],
   ['textblock', 'text', {tags: ["test", 30]}],
   ['water', 'water'],
-  ['lgravblock', 'lgravblock']
+  ['lgravblock', 'lgravblock'],
+  ['speedpad', 'speedpad']
 ];
 var sideBarOptions = {
   lgravblock: [
@@ -115,6 +116,11 @@ var sideBarOptions = {
     ['keys/key7', 'key', {tags: [7]}],
     ['keys/key8', 'key', {tags: [8]}],
     ['keys/key9', 'key', {tags: [9]}]
+  ],
+  speedpad: [
+    ['speedpad', 'speedpad'],
+    ['slowpad', 'slowpad'],
+    ['normalpad', 'normalpad']
   ],
   door: [
     ['doors/door0', 'door', {tags: [0]}],
