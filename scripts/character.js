@@ -140,9 +140,8 @@ class Character {
               plyr.speed = 2;
               break;
             case 'normalpad':
-              if (!statuses.includes('conveyor'))
-                statuses.push('conveyor');
-                break;
+              plyr.speed = 5;
+              break;
             case 'mud':
               if (!statuses.includes('mud')) {
                 statuses.push('mud');
@@ -252,8 +251,6 @@ class Character {
       this.xAccel = -20;
     if (statuses.includes('rbounce'))
       this.xAccel = 20;
-    if (statuses.includes('conveyor'))
-      this.pressRight = true;
 
     //set y position
     this.y += this.yAccel;
