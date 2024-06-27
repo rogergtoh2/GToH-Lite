@@ -109,6 +109,9 @@ class Block {
       case 'normalpad':
         this.img = cliDir + 'textures/normalpad.png';
         break;
+      case 'rightconveyor':
+        this.img = cliDir + 'textures/rightconveyor.png';
+        break;
       //case 'lowgravblock':
        // this.img = cliDir + 'textures/lowgrav.png';
       //  break;
