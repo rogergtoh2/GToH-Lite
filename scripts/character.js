@@ -142,6 +142,7 @@ class Character {
             case 'normalpad':
               if (!statuses.includes('conveyor'))
                 statuses.push('conveyor');
+                prevTouchIcy = true;
               return true;
             case 'mud':
               if (!statuses.includes('mud')) {
