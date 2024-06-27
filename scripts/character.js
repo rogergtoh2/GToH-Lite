@@ -134,13 +134,14 @@ class Character {
                 statuses.push('water');
               break;
             case 'speedpad':
-              plyr.speed = 15;
+              plyr.speed = 10;
               break;
             case 'slowpad':
               plyr.speed = 2;
               break;
             case 'normalpad':
-              plyr.pressRight = true;
+              if (!statuses.includes('conveyor'))
+                statuses.push('conveyor');
               break;
             case 'mud':
               if (!statuses.includes('mud')) {
@@ -251,6 +252,8 @@ class Character {
       this.xAccel = -20;
     if (statuses.includes('rbounce'))
       this.xAccel = 20;
+    if (statuses.includes('conveyor'))
+      this.pressRight = true;
 
     //set y position
     this.y += this.yAccel;
