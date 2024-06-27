@@ -142,7 +142,7 @@ class Character {
             case 'normalpad':
               if (!statuses.includes('conveyor'))
                 statuses.push('conveyor');
-              break;
+              return true;
             case 'mud':
               if (!statuses.includes('mud')) {
                 statuses.push('mud');
