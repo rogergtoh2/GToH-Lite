@@ -268,9 +268,8 @@ class Character {
     if (statuses.includes('mud')) {
       this.yAccel = 0;
     }
-    if (statuses.includes('conveyor')) {
-      this.pressRight = true;
-    }
+    
+    
     //xAccel slowdown
     if ((!this.pressRight && !this.pressLeft && (!prevTouchIcy || this.gravityDisabled)) || statuses.includes('mud')) {
       this.xAccel -= Math.sign(this.xAccel);
