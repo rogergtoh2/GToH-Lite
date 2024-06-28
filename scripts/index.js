@@ -88,7 +88,7 @@ function GameTick() {
           //socket.emit('new pb', WorldId, i, ReplayKeys); REMOVED BECAUSE SOCKET IS BROKEN IN SINGLEPLAYER
           AddChat(`Time: ${Timer / 40}`);
         } else {
-          AddChat('Cheats enabled. Do better, cmon.');
+          AddChat('Cheats enabled. Wake up. Wake up. Wake up.');
         }
       //}
       CreateWorld(LobbyWorld);

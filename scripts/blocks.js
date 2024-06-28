@@ -100,6 +100,18 @@ class Block {
       case 'vhgravblock':
         this.img = cliDir + 'textures/vhgravblock.png';
         break;
+      case 'speedpad':
+        this.img = cliDir + 'textures/speedpad.png';
+        break;
+      case 'slowpad':
+        this.img = cliDir + 'textures/slowpad.png';
+        break;
+      case 'normalpad':
+        this.img = cliDir + 'textures/normalpad.png';
+        break;
+      case 'rightconveyor':
+        this.img = cliDir + 'textures/rightconveyor.png';
+        break;
       //case 'lowgravblock':
        // this.img = cliDir + 'textures/lowgrav.png';
       //  break;

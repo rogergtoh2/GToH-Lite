@@ -177,7 +177,7 @@ function DrawFrame(debug = true, clear = true) {
     if (debug === 2) {
       ctx.fillText(`xA: ${Player.xAccel} yA: ${Player.yAccel} cj: ${Player.canJump} wj: ${Player.wallJump}`, 0, 46);
 } else {
-      ctx.fillText(`v0.4.3`, 23, 46); 
+      ctx.fillText(`v0.4.4`, 23, 46); 
     }
   } 
   if (pressTab) {
