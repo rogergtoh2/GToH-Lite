@@ -147,6 +147,21 @@ class Character {
                   statuses.push('conveyor');
                 }
                 return true;
+              case 'leftconveyor':
+                if (!statuses.includes('leftconveyor')) {
+                  statuses.push('leftconveyor');
+                }
+                return true;
+              case 'rightconveyor2':
+                if (!statuses.includes('conveyor2')) {
+                  statuses.push('conveyor2');
+                }
+                return true;
+              case 'leftconveyor2':
+                if (!statuses.includes('leftconveyor2')) {
+                  statuses.push('leftconveyor2');
+                }
+                return true;
             case 'mud':
               if (!statuses.includes('mud')) {
                 statuses.push('mud');
@@ -257,7 +272,7 @@ class Character {
       this.xAccel = -20;
     if (statuses.includes('rbounce'))
       this.xAccel = 20;
-    
+
 
     //set y position
     this.y += this.yAccel;
@@ -268,6 +283,15 @@ class Character {
     }
     if (statuses.includes('conveyor')) {
       this.x += 4;
+    }
+    if (statuses.includes('leftconveyor')) {
+      this.x += -4;
+    }
+    if (statuses.includes('conveyor2')) {
+      this.x += 8;
+    }
+    if (statuses.includes('leftconveyor2')) {
+      this.x += -8;
     }
     //xAccel slowdown
     if ((!this.pressRight && !this.pressLeft && (!prevTouchIcy || this.gravityDisabled)) || statuses.includes('mud')) {

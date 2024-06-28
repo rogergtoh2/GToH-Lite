@@ -123,6 +123,12 @@ var sideBarOptions = {
     ['slowpad', 'slowpad'],
     ['normalpad', 'normalpad']
   ],
+  rightconveyor: [
+    ['rightconveyor', 'rightconveyor'],
+    ['leftconveyor', 'leftconveyor'],
+    ['rightconveyor2', 'rightconveyor2'],
+    ['leftconveyor2', 'leftconveyor2']
+  ],
   door: [
     ['doors/door0', 'door', {tags: [0]}],
     ['doors/door1', 'door', {tags: [1]}],

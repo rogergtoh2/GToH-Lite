@@ -112,6 +112,15 @@ class Block {
       case 'rightconveyor':
         this.img = cliDir + 'textures/rightconveyor.png';
         break;
+      case 'leftconveyor':
+        this.img = cliDir + 'textures/leftconveyor.png';
+        break;
+      case 'rightconveyor2':
+        this.img = cliDir + 'textures/rightconveyor2.png';
+        break;
+      case 'leftconveyor2':
+        this.img = cliDir + 'textures/leftconveyor2.png';
+        break;
       //case 'lowgravblock':
        // this.img = cliDir + 'textures/lowgrav.png';
       //  break;
