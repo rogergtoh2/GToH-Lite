@@ -257,9 +257,7 @@ class Character {
       this.xAccel = -20;
     if (statuses.includes('rbounce'))
       this.xAccel = 20;
-    if (statuses.includes('conveyor'))
-      this.xAccel += 1;
-
+    
 
     //set y position
     this.y += this.yAccel;
@@ -269,7 +267,7 @@ class Character {
       this.yAccel = 0;
     }
     if (statuses.includes('conveyor')) {
-      this.xAccel += 1;
+      this.x += 4;
     }
     //xAccel slowdown
     if ((!this.pressRight && !this.pressLeft && (!prevTouchIcy || this.gravityDisabled)) || statuses.includes('mud')) {
