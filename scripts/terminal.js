@@ -204,6 +204,10 @@ function process_command(command = null) {
       clearInterval(GAME);
       addEventListener('keydown', keyHandle);
       break;
+    case 'lvl':
+    case 'level':
+      if (command.length !== 2) return;
+      CreateWorld(command[1]);
     case 'setskin':
       socket.emit('server command', command);
       break;
