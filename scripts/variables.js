@@ -26,6 +26,7 @@ var pressRight = false;
 var pressUp = false;
 var prevTouchIcy = false;
 var prevMudJump = false;
+var prevTouchConveyor = false;
 var ReplayKeys = [];
 var ReplayPos = [];
 var Replaying = false;

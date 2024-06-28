@@ -142,11 +142,11 @@ class Character {
             case 'normalpad':
               plyr.speed = 5;
               break;
-            case 'rightconveyor':
-              if (!statuses.includes('conveyor')) {
-                statuses.push('conveyor');
-              }
-              return true;
+              case 'rightconveyor':
+                if (!statuses.includes('conveyor')) {
+                  statuses.push('conveyor');
+                }
+                return true;
             case 'mud':
               if (!statuses.includes('mud')) {
                 statuses.push('mud');
@@ -257,6 +257,8 @@ class Character {
       this.xAccel = -20;
     if (statuses.includes('rbounce'))
       this.xAccel = 20;
+    if (statuses.includes('conveyor'))
+      this.xAccel += 5
 
 
     //set y position
