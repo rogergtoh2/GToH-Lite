@@ -143,8 +143,9 @@ class Character {
               plyr.speed = 5;
               break;
             case 'rightconveyor':
-              if (!statuses.includes('conveyor'))
+              if (!statuses.includes('conveyor')) {
                 statuses.push('conveyor');
+              }
               return true;
             case 'mud':
               if (!statuses.includes('mud')) {
@@ -222,6 +223,7 @@ class Character {
     }
     
     touch(this);
+
     const gravitySign = (this.gravityDisabled ? 1 : (this.gravityReversed ? -1 : 1)) * (statuses.includes('water') ? -1 : 1)
     const maxGravity = statuses.includes('water') ? 3 : 18;
 
@@ -255,8 +257,7 @@ class Character {
       this.xAccel = -20;
     if (statuses.includes('rbounce'))
       this.xAccel = 20;
-    if (statuses.includes('conveyor'))
-      this.pressRight = true;
+
 
     //set y position
     this.y += this.yAccel;
@@ -264,6 +265,9 @@ class Character {
     touch(this);
     if (statuses.includes('mud')) {
       this.yAccel = 0;
+    }
+    if (statuses.includes('conveyor')) {
+      this.pressRight = true;
     }
     //xAccel slowdown
     if ((!this.pressRight && !this.pressLeft && (!prevTouchIcy || this.gravityDisabled)) || statuses.includes('mud')) {
