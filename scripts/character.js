@@ -257,6 +257,8 @@ class Character {
       this.xAccel = -20;
     if (statuses.includes('rbounce'))
       this.xAccel = 20;
+    if (statuses.includes('conveyor'))
+      this.xAccel += 1;
 
 
     //set y position
