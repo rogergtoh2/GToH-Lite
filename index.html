@@ -16,6 +16,10 @@
 			font-family: 'MinecraftRegular';
 			src: url('./fonts/Minecraftia-Regular.ttf')
 		}
+		@font-face {
+			font-family: 'MinecraftRegular';
+			src: url('./client/fonts/Minecraftia-Regular.ttf')
+		}
 		body {
 			overflow: hidden;
       height: 100%;
@@ -59,19 +63,22 @@
     });
 	</script>
 
-	<script src='./scripts/variables.js'></script>
-  <script src='./scripts/music.js'></script>
-	<script src='./scripts/character.js'></script>
-	<script src='./scripts/lvlData.js'></script>
-	<script src='./scripts/blocks.js'></script>
-	<script src='./scripts/draw.js'></script>
-	<script src='./scripts/createWorld.js'></script>
-  <script src='./scripts/dialogue.js'></script>
-	<script src='./scripts/index.js'></script>
-  <script src='./scripts/terminal.js'></script>
-	<script src='./scripts/intro.js'></script>
-  <script src='./scripts/serverInfo.js'></script>
-  <script src='./scripts/levelCreator.js'></script>
+	<script>
+
+		const cliDir = (socket == undefined) ? "./" : "./client/";
+		const allScriptPaths = ['variables', 'music', 'character', 'lvlData', 'blocks', 'draw', 'createWorld', 'dialogue', 'index', 'terminal', 'intro', 'serverInfo', 'levelCreator'];
+
+		function loadScript(index) {
+			var scriptElement = document.createElement('script');
+			scriptElement.src = cliDir + "scripts/" + allScriptPaths[index] + ".js";
+			document.body.appendChild(scriptElement);
+			if (index + 1 < allScriptPaths.length)
+				scriptElement.onload = () => {loadScript(index + 1)};
+		}
+
+		loadScript(0);
+	</script>
+
 
   <!-- <a id="updateVideoThing" class="updateVideo" href='./textures/animations/updateVideo.mp4'>Important Progress Update</a>-->
 

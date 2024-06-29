@@ -177,7 +177,7 @@ function DrawFrame(debug = true, clear = true) {
     if (debug === 2) {
       ctx.fillText(`xA: ${Player.xAccel} yA: ${Player.yAccel} cj: ${Player.canJump} wj: ${Player.wallJump}`, 0, 46);
 } else {
-      ctx.fillText(`v0.4.1`, 23, 46); 
+      ctx.fillText(`v0.4.4`, 23, 46); 
     }
   } 
   if (pressTab) {
@@ -190,7 +190,7 @@ function DrawFrame(debug = true, clear = true) {
     ctx.font = `${10 * camZ}px MinecraftRegular`;
     for (const i in names) {
       const l = (lvlData[OtherPlayers[names[i]].location].about.name === '') ? lvlData[OtherPlayers[names[i]].location].about.diff : lvlData[OtherPlayers[names[i]].location].about.name;
-      ctx.fillText(`${names[i]} in ${l}`, 400 * camZ, 20 * camZ + 15 * camZ * i);
+      ctx.fillText(`${OtherPlayers[names[i]].user} in ${l}`, 400 * camZ, 20 * camZ + 15 * camZ * i);
     }
     const o = (lvlData[WorldId].about.name === '') ? lvlData[WorldId].about.diff : lvlData[WorldId].about.name;
     ctx.fillText(`${Username} in ${o}`, 400 * camZ, 20 * camZ + 15 * camZ * names.length);

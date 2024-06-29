@@ -78,8 +78,8 @@ function process_command(command = null) {
                   Player.y = inf.y;
                 } 
                 
-              } else if (command[2] in OtherPlayers) {
-                  const inf = OtherPlayers[command[2]];
+              } else if (getPlayerIdByName(command[2]) in OtherPlayers) {
+                  const inf = OtherPlayers[getPlayerIdByName(command[2])];
                   if (inf.location !== WorldId) {
                     CreateWorld(inf.location);
                     cheatsEnabled = true;
@@ -178,8 +178,6 @@ function process_command(command = null) {
         socket.emit('server command', command);
       break;
     case 'replay':
-      cheatsEnabled = true;
-      Replaying = !Replaying;
       if (command[1] !== undefined) {
         if (command[1] === 'save') {
           navigator.clipboard.writeText(JSON.stringify(ReplayKeys)).then(function() {
@@ -190,18 +188,26 @@ function process_command(command = null) {
           tab.document.write('[' + ReplayKeys + ']');
           tab.document.close();
           });
+          return;
         } else
         ReplayKeys = JSON.parse(command[1]);
       }
+      cheatsEnabled = true;
+      Replaying = !Replaying;
       if (Replaying)
         CreateWorld(ReplayKeys[0]);
       break;
     case 'tasmode':
+    case 'tsm':
       cheatsEnabled = true;
       TasMode = true;
       clearInterval(GAME);
       addEventListener('keydown', keyHandle);
       break;
+    case 'lvl':
+    case 'level':
+      if (command.length !== 2) return;
+      CreateWorld(command[1]);
     case 'setskin':
       socket.emit('server command', command);
       break;

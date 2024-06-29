@@ -1,6 +1,7 @@
+console.log("loading variables...")
 var warning = false; //set to true if redesgining code that could potentially break game
-
-const cliDir = './';
+const ClientVersion = 1;
+const MinimumServerVersion = 1;
 
 //draw
 var drawQueue = [];
@@ -25,6 +26,7 @@ var pressRight = false;
 var pressUp = false;
 var prevTouchIcy = false;
 var prevMudJump = false;
+var prevTouchConveyor = false;
 var ReplayKeys = [];
 var ReplayPos = [];
 var Replaying = false;
@@ -46,11 +48,13 @@ var perLevel = [];
 var WorldId = -2;
 var LevelWon = false;
 var Timer = 0;
+var TimesSwapped = 0;
 var Ticker = 0;
 var LobbyWorld = -2;
 var RecentLevel = -2;
 var GAME;
 var levelsComplete = [];
+var swapsComplete = [];
 var worldRecords = [];
 var startTime = 0;
 var cheatsEnabled = false;
@@ -60,7 +64,6 @@ var ChatOpen = false;
 var peopleLeft = 0;
 
 //online
-var ClientVersion;
 var ClientNumber;
 var login;
 var Username = '';
@@ -102,6 +105,7 @@ var dialogueOpen = false;
 
 //chat
 var chatQueue = [];
+var chatLogs = [];
 
 function colliding(x, y, w, h, x2, y2, w2, h2) {
   if (x < x2 + w2 && x + w > x2) {
@@ -117,6 +121,14 @@ function fcoll(obj, obj2) {
   return colliding(obj.x, obj.y, obj.width, obj.height, obj2.x, obj2.y, obj2.width, obj2.height);
 }
 
+function getPlayerIdByName(name) {
+  for (const plyr in OtherPlayers) {
+    if (OtherPlayers[plyr].user === name) {
+      return plyr;
+    }
+  }
+  return false;
+}
 
 var preloadList = [
   'block',

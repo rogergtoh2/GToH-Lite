@@ -1,12 +1,13 @@
 "use strict";
 var tempInterval, mainBeat = 400, mainInc = 0, skipIntro = false; 
+ctx.fillText("debug text", -500, 500);
 skipIntro && (mainInc = 3, mainBeat = 100), document.body.style.width = "100%", document.body.style.height = "100%", myCanvas.height = window.innerHeight, myCanvas.width = window.innerWidth, ctx.textAlign = "center", ctx.font = "15px MinecraftRegular";
 { 
   let t = new Image; 
   t.onload = (() => { 
     let e = t.width / myCanvas.width; 
     t.height / e > myCanvas.height - 45 && (e = t.height / (myCanvas.height - 45)), ctx.imageSmoothingEnabled = !1, ctx.lineWidth = 5, ctx.strokeRect((myCanvas.width - t.width / e) / 2, 0, t.width / e, t.height / e), ctx.drawImage(t, (myCanvas.width - t.width / e) / 2, 0, t.width / e, t.height / e), ctx.lineWidth = 1 
-  }), t.src = cliDir + "textures/updates/0.4.0-expanded.png" 
+  }), t.src = cliDir + "textures/updates/0.4.3-expanded.png" 
 } 
 function cool() { 
   setTimeout(() => { 

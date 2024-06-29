@@ -1,3 +1,58 @@
+console.log("loading createWorld...")
+class LevelStars {
+  constructor(levelID, maxTimes, maxSwaps) {
+    this.level = levelID;
+    this.maxTimes = maxTimes;
+    this.maxSwaps = maxSwaps;
+
+    this.starsAchieved = [false, false, false];
+    this.secretStarAchieved = false;
+  }
+
+  updateStars(time, swaps) {
+    if (typeof time == "number") {
+      for (const i in this.maxTimes) {
+        if (time <= this.maxTimes[i]) {
+          this.starsAchieved[i] = true;
+        }
+      }
+    }
+    if (typeof swaps == "number" && swaps <= this.maxSwaps) {
+      this.secretStarAchieved = true;
+    }
+  }
+
+  getStars() {
+    let stars = this.starsAchieved.reduce((a, b) => a + b, 0);
+    if (stars == 3 && this.secretStarAchieved) stars = 4;
+    return stars;
+  }
+}
+
+var AllStars = []
+
+function initializeAllStars() {
+  for (const i in lvlData) {
+    if ("timeConditions" in lvlData[i]) {
+      var swaps = -1
+      if ("swapConditions" in lvlData[i]) {
+        swaps = lvlData[i].swapConditions
+      }
+      AllStars[i] = new LevelStars(i, lvlData[i].timeConditions, swaps);
+    }
+  }
+}
+
+function updateAllStars() {
+  for (const i in AllStars) {
+    if (AllStars[i] == undefined) continue;
+
+    AllStars[i].updateStars(levelsComplete[i], swapsComplete[i]);
+  }
+}
+
+initializeAllStars()
+
 function CreateBlocks(x, y, type = 'block', length = 1, height = 1, extraTags = [], oImg = null) {
   let blockSize = 30;
   if (type === 'text') {
@@ -53,6 +108,13 @@ function CreateWorld(id, useID = true) {
   } else 
     levelFormat = 1;
   for (let i = 0; i < lvl.data.length; i++) {
+    if (lvl.data[i][2] == "portal" && "timeConditions" in lvlData[lvl.data[i][5][0]]) {
+      var stars = 0
+      if (AllStars[lvl.data[i][5][0]] != undefined) {
+        stars = AllStars[lvl.data[i][5][0]].getStars();
+      }
+      CreateBlocks(lvl.data[i][0], lvl.data[i][1] + 30, "stars" + stars, 1, 1);
+    }
     CreateBlocks(...lvl.data[i]);
   }
   if ("music" in lvl) {
@@ -68,8 +130,8 @@ function CreateWorld(id, useID = true) {
     
     //worldText.push(new Text('tab to see players online', 670, -120, 12));
     //worldText.push(new Text('L to set username', 670, -100, 12));
-    //worldText.push(new Text('/ for console', 670, -80, 12));
-    worldText.push(new Text('GToH Expanded 0.4.1', 670, -40, 12));
+    worldText.push(new Text('Set username for players to see you (L)', 670, -20, 12));
+    worldText.push(new Text('GToH Expanded 0.4.4', 670, -40, 12));
     //worldText.push(new Text('Coming March 19...', 360, -320, 12));
     world.push(new AnimatedBlock(635, -320, 'portalgreyanim.png',
     {
@@ -89,6 +151,7 @@ function CreateWorld(id, useID = true) {
   Player.wallJump = 0;
   if (LobbyWorld !== WorldId) {
     Timer = 0;
+    TimesSwapped = 0;
     if (!Replaying) {
     ReplayKeys = [WorldId];
     ReplayPos = [WorldId];

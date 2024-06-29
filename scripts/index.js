@@ -1,4 +1,5 @@
 'use strict';
+console.log("loading index...")
 //do player cool
 var Player = new Character(playerImg);
 //CreateWorld(-2);
@@ -37,11 +38,16 @@ function ChatTick() {
     //handle deletion time
     chatQueue[i][1] = chatQueue[i][1] + 1;
     if (chatQueue[i][1] > 320) {
-      chatQueue.splice(i, 1);
+      chatLogs.push(chatQueue.splice(i, 1)[0]);
       continue;
     }
     //actually draw it
     AddDrawQueue('text', new Text(chatQueue[i][0], 0, myCanvas.height - (chatQueue.length - i) * 20 * camZ, 11, true, false, true));
+  }
+  if (pressTab) {
+    for (var i = chatLogs.length - 1; i >= 0; i--) {
+      AddDrawQueue("text", new Text(chatLogs[i][0], 0, myCanvas.height - (chatQueue.length + chatLogs.length - i) * 20 * camZ, 11, true, false, true));
+    }
   }
 }
 
@@ -70,14 +76,19 @@ function GameTick() {
       const i = Timer / 40;
       //if (levelsComplete[WorldId] > i || levelsComplete[WorldId] === undefined || levelsComplete[WorldId] === null) {
         if (!cheatsEnabled) {
+          updateStars(i, TimesSwapped)
           if (levelsComplete[WorldId] > i || levelsComplete[WorldId] === undefined || levelsComplete[WorldId] === null || levelsComplete[WorldId] === false) {
             levelsComplete[WorldId] = i;
             localStorage.setItem("levels", JSON.stringify(levelsComplete));
           }
+          if (swapsComplete[WorldId] == undefined || swapsComplete[WorldId] > TimesSwapped) {
+            swapsComplete[WorldId] = TimesSwapped;
+            localStorage.setItem("swaps", JSON.stringify(swapsComplete));
+          }
           //socket.emit('new pb', WorldId, i, ReplayKeys); REMOVED BECAUSE SOCKET IS BROKEN IN SINGLEPLAYER
           AddChat(`Time: ${Timer / 40}`);
         } else {
-          AddChat('Cheats enabled. Do better, cmon.');
+          AddChat('Cheats enabled. Wake up. Wake up. Wake up.');
         }
       //}
       CreateWorld(LobbyWorld);
@@ -176,6 +187,16 @@ function GameTick() {
   DrawFrame(false, false);
 }
 
+function updateStars(time, swaps = 100) {
+  if (!("timeConditions" in lvlData[WorldId])) return
+  const conds = lvlData[WorldId].timeConditions
+  if (AllStars[WorldId] == undefined) {
+    AllStars[WorldId] = new LevelStars(WorldId, conds, 1);
+  }
+  AllStars[WorldId].updateStars(time, swaps)
+}
+
+
 
 //funny stuff
 CreateWorld(-2);
@@ -256,10 +277,14 @@ window.addEventListener('keydown', (EventKey) => {
       Player.pressDown = true;
       break;
     case ' ':
-      if (redActive === 1)
+      if (redActive === 1) {
         redActive = 2;
-      if (redActive === 3)
+        TimesSwapped++;
+      }
+      if (redActive === 3) {
         redActive = 0;
+        TimesSwapped++;
+      }
       break;
     case 'r':
       if (PlayTest) break;
@@ -430,17 +455,13 @@ socket.on('true login', (rer, logging)=>{
       return;
     }
   } else if (rer == true) {
-      alert("This login is already taken.");
-  
-      return;
-    } else {
-      alert("new account created");
-    }
-  });
+    alert("This login is already taken.");
 
-  if (localStorage.getItem('login') !== null) {
-    autoLogin(JSON.parse(localStorage.getItem('login')));
+    return;
+  } else {
+    alert("new account created");
   }
+});
 
 /*
 X = 150

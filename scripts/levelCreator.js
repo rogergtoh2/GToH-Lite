@@ -86,7 +86,9 @@ var blockTypeButtons = [
   ['vines', 'vine'],
   ['textblock', 'text', {tags: ["test", 30]}],
   ['water', 'water'],
-  ['lgravblock', 'lgravblock']
+  ['lgravblock', 'lgravblock'],
+  ['speedpad', 'speedpad'],
+  ['rightconveyor', 'rightconveyor']
 ];
 var sideBarOptions = {
   lgravblock: [
@@ -115,6 +117,17 @@ var sideBarOptions = {
     ['keys/key7', 'key', {tags: [7]}],
     ['keys/key8', 'key', {tags: [8]}],
     ['keys/key9', 'key', {tags: [9]}]
+  ],
+  speedpad: [
+    ['speedpad', 'speedpad'],
+    ['slowpad', 'slowpad'],
+    ['normalpad', 'normalpad']
+  ],
+  rightconveyor: [
+    ['rightconveyor', 'rightconveyor'],
+    ['leftconveyor', 'leftconveyor'],
+    ['rightconveyor2', 'rightconveyor2'],
+    ['leftconveyor2', 'leftconveyor2']
   ],
   door: [
     ['doors/door0', 'door', {tags: [0]}],

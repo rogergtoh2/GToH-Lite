@@ -14,6 +14,10 @@ class OnlinePlayer {
     this.userText.y = this.y - 5;
     AddDrawQueue('text', this.userText);
   }
+  updateName(name) {
+    this.user = name;
+    this.userText.text = name;
+  }
 }
 
 class Character {
@@ -129,6 +133,35 @@ class Character {
                if (!statuses.includes('water'))
                 statuses.push('water');
               break;
+            case 'speedpad':
+              plyr.speed = 8;
+              break;
+            case 'slowpad':
+              plyr.speed = 3;
+              break;
+            case 'normalpad':
+              plyr.speed = 5;
+              break;
+              case 'rightconveyor':
+                if (!statuses.includes('conveyor')) {
+                  statuses.push('conveyor');
+                }
+                return true;
+              case 'leftconveyor':
+                if (!statuses.includes('leftconveyor')) {
+                  statuses.push('leftconveyor');
+                }
+                return true;
+              case 'rightconveyor2':
+                if (!statuses.includes('conveyor2')) {
+                  statuses.push('conveyor2');
+                }
+                return true;
+              case 'leftconveyor2':
+                if (!statuses.includes('leftconveyor2')) {
+                  statuses.push('leftconveyor2');
+                }
+                return true;
             case 'mud':
               if (!statuses.includes('mud')) {
                 statuses.push('mud');
@@ -183,6 +216,12 @@ class Character {
               break;
             case 'dirt':
               return true;
+            case 'stars0':
+            case 'stars1':
+            case 'stars2':
+            case 'stars3':
+            case 'stars4':
+              break;
             case 'decor':
               if(i.tags[1] === false && i.tags.includes('moderatorTest')) {
                 i.tags[1] = true;
@@ -199,6 +238,7 @@ class Character {
     }
     
     touch(this);
+
     const gravitySign = (this.gravityDisabled ? 1 : (this.gravityReversed ? -1 : 1)) * (statuses.includes('water') ? -1 : 1)
     const maxGravity = statuses.includes('water') ? 3 : 18;
 
@@ -213,7 +253,7 @@ class Character {
       this.yAccel -= gravitySign * 2
 
     //limit gravity
-    if (((this.yAccel > maxGravity) && gravitySign === 1) || ((this.yAccel < -maxGravity) && gravitySign === -1)) {
+    if (((this.yAccel > maxGravity * Math.max(this.gravityMultiplier, 0.5) && gravitySign === 1) || ((this.yAccel < -maxGravity * Math.max(this.gravityMultiplier, 0.5))) && gravitySign === -1)) {
       this.yAccel -= gravitySign;
       console.log(this.yAccel)
     }
@@ -233,12 +273,25 @@ class Character {
     if (statuses.includes('rbounce'))
       this.xAccel = 20;
 
+
     //set y position
     this.y += this.yAccel;
 
     touch(this);
     if (statuses.includes('mud')) {
       this.yAccel = 0;
+    }
+    if (statuses.includes('conveyor')) {
+      this.x += 4;
+    }
+    if (statuses.includes('leftconveyor')) {
+      this.x += -4;
+    }
+    if (statuses.includes('conveyor2')) {
+      this.x += 8;
+    }
+    if (statuses.includes('leftconveyor2')) {
+      this.x += -8;
     }
     //xAccel slowdown
     if ((!this.pressRight && !this.pressLeft && (!prevTouchIcy || this.gravityDisabled)) || statuses.includes('mud')) {
@@ -263,11 +316,11 @@ class Character {
         prevTouchIcy = false;
         for (let o = 0; o < 19; o++) {
           if (!touch(this)) break;
-          this.y -= gravitySign;
+          this.y -= gravitySign * this.gravityMultiplier;
           if (o === 18) {
-            this.y += 19 * gravitySign;
+            this.y += 19 * gravitySign * this.gravityMultiplier;
             while (touch(this))
-              this.y += gravitySign;
+              this.y += gravitySign * this.gravityMultiplier;
           }
         }
         if (this.yAccel > 16) {
