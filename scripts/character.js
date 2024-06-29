@@ -134,10 +134,10 @@ class Character {
                 statuses.push('water');
               break;
             case 'speedpad':
-              plyr.speed = 10;
+              plyr.speed = 8;
               break;
             case 'slowpad':
-              plyr.speed = 2;
+              plyr.speed = 3;
               break;
             case 'normalpad':
               plyr.speed = 5;
