@@ -286,7 +286,7 @@ lvlData[-1] = {
 }
 lvlData[0] = {
   "format": 1,
-  "spawn": [90, 210],
+  "spawn": [190, 60],
   "about": { name: '', diff: 'Road', create: '' },
   "music": "traveler",
   "levels": [129],
