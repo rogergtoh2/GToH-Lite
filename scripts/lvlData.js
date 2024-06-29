@@ -269,24 +269,25 @@ lvlData[-3] = {
 };
 lvlData[-2] = {
   "format": 2,
-  "spawn": [150, -50],
+  "spawn": [150, 150],
   "about": { name: '', diff: 'Lobby', create: '' },
   "music": 'main',
   "data": [
-    [110,-120,"portal",1,1,[0]],
+    [0,25,"portal",1,1,[-1]],
+    [300,25,"portal",1,1,[0]],
     //[635,-320,"portal",1,1,[-16]],
     [30,180,"block",9,1],[-30,150,"block",3,1],[270,150,"block",3,1],[330,120,"block",2,1],[-60,120,"block",2,1],[-90,120,"block",1,1],[390,120,"block",1,1],[390,60,"block",1,2],[-90,60,"block",1,2],[-90,-30,"block",1,3],[-90,-60,"block",1,1],[390,-60,"block",1,4],[-60,-60,"block",15,1]]
 };
 lvlData[-1] = {
   "format": 2,
   "spawn": [150, 60],
-  "about": { name: 'Level Creator', diff: 'Expanded', create: ''},
+  "about": { name: 'Lite', diff: 'Level Creator', create: ''},
   "music": "levelcreator"
 }
 lvlData[0] = {
   "format": 1,
   "spawn": [90, 210],
-  "about": { name: 'Difficulty: 1/10', diff: 'World One', create: '' },
+  "about": { name: '', diff: 'Lite Journey', create: '' },
   "music": "traveler",
   "levels": [1,2,3,4,5,6,9,13],
   "data": 

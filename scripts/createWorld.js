@@ -130,8 +130,8 @@ function CreateWorld(id, useID = true) {
     
     //worldText.push(new Text('tab to see players online', 670, -120, 12));
     //worldText.push(new Text('L to set username', 670, -100, 12));
-    worldText.push(new Text('Set username for players to see you (L)', 670, -20, 12));
-    worldText.push(new Text('GToH Expanded 0.4.4', 670, -40, 12));
+    //worldText.push(new Text('Set username for players to see you (L)', 670, -20, 12));
+    //worldText.push(new Text('GToH Expanded 0.4.4', 670, -40, 12));
     //worldText.push(new Text('Coming March 19...', 360, -320, 12));
     world.push(new AnimatedBlock(635, -320, 'portalgreyanim.png',
     {
