@@ -53,6 +53,16 @@ function updateAllStars() {
 
 initializeAllStars()
 
+function isWorldUnlocked(id) {
+  if (!("requirements" in lvlData[id])) return true; // if no reqs then is unlcoked!
+  for (req in lvlData[id].requirements) {
+    if (!(req in LevelRewards)) return false; // if don't have that reward
+    if (LevelRewards[req] < lvlData[id].requirements[req]) return false; //if don't have enough of reward
+  }
+
+  return true; // passes all checks
+}
+
 function CreateBlocks(x, y, type = 'block', length = 1, height = 1, extraTags = [], oImg = null) {
   let blockSize = 30;
   if (type === 'text') {
