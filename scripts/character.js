@@ -81,7 +81,9 @@ class Character {
               LevelWon = true;
               break;
             case 'portal':
-              newlvl = i.tags[0];
+              if (isWorldUnlocked(i.tags[0])) {
+                newlvl = i.tags[0];
+              }
               break;
             case 'key':
               if (levelFormat === 1) {
@@ -431,9 +433,11 @@ class Character {
         if (PlayTest) {
           CreateWorld(creatorBlocks, false);
         } else
-        StartLevelCreator();
+          StartLevelCreator();
       } else {
+        
         CreateWorld(newlvl);
+        
       }
     }
   }
