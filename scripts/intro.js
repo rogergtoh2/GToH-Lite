@@ -1,5 +1,5 @@
 "use strict";
-var tempInterval, mainBeat = 400, mainInc = 0, skipIntro = false; 
+var tempInterval, mainBeat = 400, mainInc = 0, skipIntro = true; 
 ctx.fillText("debug text", -500, 500);
 skipIntro && (mainInc = 3, mainBeat = 100), document.body.style.width = "100%", document.body.style.height = "100%", myCanvas.height = window.innerHeight, myCanvas.width = window.innerWidth, ctx.textAlign = "center", ctx.font = "15px MinecraftRegular";
 { 
