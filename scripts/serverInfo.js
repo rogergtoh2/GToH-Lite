@@ -129,8 +129,8 @@ if (socket != undefined) {
 }
 
 function syncProgress() {
-  const lvls = localStorage.getItem("levels");
-  const swaps = localStorage.getItem("swaps");
+  const lvls = localStorage.getItem("GToH-Lite_levels");
+  const swaps = localStorage.getItem("GToH-Lite_swaps");
 
   // Sync rewards
   for (const i in levelsComplete) {
@@ -144,7 +144,7 @@ function syncProgress() {
       }
     }
   }
-  
+
   console.log("synced levels")
   if (lvls != null) {
     levelsComplete = JSON.parse(lvls);

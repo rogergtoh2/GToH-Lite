@@ -79,11 +79,11 @@ function GameTick() {
           updateStars(i, TimesSwapped)
           if (levelsComplete[WorldId] > i || levelsComplete[WorldId] === undefined || levelsComplete[WorldId] === null || levelsComplete[WorldId] === false) {
             levelsComplete[WorldId] = i;
-            localStorage.setItem("levels", JSON.stringify(levelsComplete));
+            localStorage.setItem("GToH-Lite_levels", JSON.stringify(levelsComplete));
           }
           if (swapsComplete[WorldId] == undefined || swapsComplete[WorldId] > TimesSwapped) {
             swapsComplete[WorldId] = TimesSwapped;
-            localStorage.setItem("swaps", JSON.stringify(swapsComplete));
+            localStorage.setItem("GToH-Lite_swaps", JSON.stringify(swapsComplete));
           }
           //socket.emit('new pb', WorldId, i, ReplayKeys); REMOVED BECAUSE SOCKET IS BROKEN IN SINGLEPLAYER
           AddChat(`Time: ${Timer / 40}`);
