@@ -145,9 +145,14 @@ class Block {
       case 'portal':
         if (this.tags[0] > 0 && levelsComplete[this.tags[0]] > 0) {
           this.img = cliDir + 'textures/portalgreen.png';
-        } else
+        } else // if not complete
         this.img = cliDir + 'textures/portalred.png';
-        if ('levels' in lvlData[this.tags[0]]) {
+        
+        // check if reqs are met 
+        if (!isWorldUnlocked(this.tags[0]))
+          this.img = cliDir + 'textures/portalgrey.png';
+
+        if ('levels' in lvlData[this.tags[0]]) { // if lobby level
           let fullComplete = true;
           for (const l of lvlData[this.tags[0]].levels) {
             if (!(levelsComplete[l] > 0)) {
