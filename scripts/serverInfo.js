@@ -139,7 +139,13 @@ function syncProgress() {
     swapsComplete = JSON.parse(swaps);
   }
 
-  // Sync rewards
+  syncRewards();
+
+  updateAllStars();
+  console.log("Loaded save data")
+}
+
+function syncRewards() {
   for (const i in levelsComplete) {
     if (!(levelsComplete[i] > 0)) continue;
     if (!('reward' in lvlData[i])) continue;
@@ -151,9 +157,7 @@ function syncProgress() {
       }
     }
   }
-
-  updateAllStars()
-  console.log("Loaded save data")
 }
+
 levelsComplete = new Array(lvlData.length).fill(false);
 syncProgress()
