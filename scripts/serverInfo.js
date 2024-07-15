@@ -131,6 +131,20 @@ if (socket != undefined) {
 function syncProgress() {
   const lvls = localStorage.getItem("levels");
   const swaps = localStorage.getItem("swaps");
+
+  // Sync rewards
+  for (const i in levelsComplete) {
+    if (!(levelsComplete[i] > 0)) continue;
+    if (!('reward' in lvlData[i])) continue;
+    for (const b in lvlData[i].reward) {
+      if (!(b in LevelRewards)) {
+        LevelRewards[b] = lvlData[i].reward[b];
+      } else {
+        LevelRewards[b] += lvlData[i].reward[b];
+      }
+    }
+  }
+  
   console.log("synced levels")
   if (lvls != null) {
     levelsComplete = JSON.parse(lvls);
