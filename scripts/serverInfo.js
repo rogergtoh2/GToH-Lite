@@ -132,6 +132,13 @@ function syncProgress() {
   const lvls = localStorage.getItem("GToH-Lite_levels");
   const swaps = localStorage.getItem("GToH-Lite_swaps");
 
+  if (lvls != null) {
+    levelsComplete = JSON.parse(lvls);
+  }
+  if (swaps != null) {
+    swapsComplete = JSON.parse(swaps);
+  }
+
   // Sync rewards
   for (const i in levelsComplete) {
     if (!(levelsComplete[i] > 0)) continue;
@@ -145,14 +152,8 @@ function syncProgress() {
     }
   }
 
-  console.log("synced levels")
-  if (lvls != null) {
-    levelsComplete = JSON.parse(lvls);
-  }
-  if (swaps != null) {
-    swapsComplete = JSON.parse(swaps);
-  }
   updateAllStars()
+  console.log("Loaded save data")
 }
 levelsComplete = new Array(lvlData.length).fill(false);
 syncProgress()
