@@ -157,6 +157,10 @@ function syncRewards() {
       }
     }
   }
+
+  if (LevelRewards.NewSkin === 1) {
+    PlayerSkin = cliDir + "textures/skins/admin.png";
+  }
 }
 
 levelsComplete = new Array(lvlData.length).fill(false);

@@ -51,7 +51,7 @@ lvlData[2] = {
 "format": 2,
 "about": { name: "Tower of the Advancement", diff: "Tutorial", create: ""},
 "spawn": [150,60],
-"reward": { Tutorial2: 1},
+"reward": { Tutorial2: 1, NewSkin: 1},
 "requirements": { Tutorial: 1 },
 "timeConditions": [22.5, 15, 10],
 "swapConditions": 0,
