@@ -150,7 +150,7 @@ class Block {
         
         // check if reqs are met 
         if (!isWorldUnlocked(this.tags[0]))
-          this.img = cliDir + 'textures/portalgrey.png';
+          this.img = cliDir + 'textures/portallocked.png';
 
         if ('levels' in lvlData[this.tags[0]]) { // if lobby level
           let fullComplete = true;
