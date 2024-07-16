@@ -159,7 +159,7 @@ function syncRewards() {
   }
 
   if (LevelRewards.NewSkin === 1) {
-    PlayerSkin = cliDir + "textures/skins/admin.png";
+    PlayerSkin = cliDir + "textures/skins/starskin.png";
   }
 }
 
